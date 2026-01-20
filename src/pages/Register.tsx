@@ -74,12 +74,14 @@ const Register = () => {
         <div className="bg-card rounded-2xl shadow-lifted border border-border p-8">
           <div className="text-center mb-8">
             <Link to="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl gradient-primary shadow-glow">
-                <span className="text-xl font-bold text-primary-foreground">R</span>
-              </div>
+              <img 
+                src="/VeridianCreditSystemsLogo.jpg" 
+                alt="Veridian Credit Systems" 
+                className="h-10 w-10 rounded-xl object-cover"
+              />
             </Link>
             <h1 className="font-display text-2xl font-bold text-foreground">Create your account</h1>
-            <p className="text-muted-foreground mt-1">Get started with RegalPay</p>
+            <p className="text-muted-foreground mt-1">Get started with Veridian Credit Systems</p>
           </div>
 
           {/* Account Type Selector */}

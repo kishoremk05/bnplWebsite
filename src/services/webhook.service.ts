@@ -44,14 +44,14 @@ export async function sendWebhook(params: SendWebhookParams): Promise<{
         // Prepare headers
         const headers: Record<string, string> = {
             'Content-Type': 'application/json',
-            'User-Agent': 'RegalPay-Webhook/1.0',
-            'X-RegalPay-Event': params.payload.event,
+            'User-Agent': 'Veridian-Webhook/1.0',
+            'X-Veridian-Event': params.payload.event,
         };
 
         // Add signature if secret provided
         if (params.secret) {
             const signature = generateWebhookSignature(payloadString, params.secret);
-            headers['X-RegalPay-Signature'] = signature;
+            headers['X-Veridian-Signature'] = signature;
         }
 
         // Send webhook
@@ -185,9 +185,9 @@ export async function retryWebhook(logId: string): Promise<{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'User-Agent': 'RegalPay-Webhook/1.0',
-                'X-RegalPay-Event': log.event_type,
-                'X-RegalPay-Retry': log.attempt_number.toString(),
+                'User-Agent': 'Veridian-Webhook/1.0',
+                'X-Veridian-Event': log.event_type,
+                'X-Veridian-Retry': log.attempt_number.toString(),
             },
             body: payloadString,
         });

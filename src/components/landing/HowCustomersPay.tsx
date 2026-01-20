@@ -87,7 +87,7 @@ export function HowCustomersPay() {
             </span>
           </motion.div>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            How customers are paying<br />with Regal Pay
+            How customers are paying<br />with Veridian Credit Systems
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Choose your category and see how easy it is to split payments

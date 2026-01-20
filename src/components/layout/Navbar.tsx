@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { label: "Shop", href: "/shop" },
   { label: "Business", href: "/merchants" },
-  { label: "What is Regal Pay", href: "/#how-it-works" },
+  { label: "What is Veridian Credit Systems", href: "/#how-it-works" },
   { label: "Help", href: "/help" },
 ];
 
@@ -22,8 +22,13 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="font-display text-2xl font-bold text-foreground">
-              Regal Pay
+            <img 
+              src="/VeridianCreditSystemsLogo.jpg" 
+              alt="Veridian Credit Systems" 
+              className="h-10 w-10 rounded-lg object-cover"
+            />
+            <span className="font-display text-xl font-bold text-foreground hidden sm:inline">
+              Veridian
             </span>
           </Link>
 

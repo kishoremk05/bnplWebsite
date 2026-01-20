@@ -84,7 +84,7 @@ export function MerchantCTA() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, ease: smoothEasing }}
               >
-                Boost your business with Regal Pay
+                Boost your business with Veridian Credit Systems
               </motion.h2>
               
               <motion.p

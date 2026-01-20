@@ -158,7 +158,7 @@ export default function CheckoutPage() {
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold mb-2">Complete Your Purchase</h1>
         <p className="text-muted-foreground">
-          Pay over time with Regal Pay - Simple, transparent installments
+          Pay over time with Veridian Credit Systems - Simple, transparent installments
         </p>
       </div>
 

@@ -9,8 +9,8 @@ const steps = [
   {
     icon: ShoppingCart,
     step: "01",
-    title: "Shop and select Regal Pay",
-    description: "Choose Regal Pay at checkout and select your preferred payment plan.",
+    title: "Shop and select Veridian Credit Systems",
+    description: "Choose Veridian Credit Systems at checkout and select your preferred payment plan.",
     bgClass: "bg-pastel-peach",
     color: "from-orange-500 to-amber-600",
     image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=300&q=80",
@@ -101,7 +101,7 @@ export function HowItWorks() {
           transition={{ duration: 0.7, ease: smoothEasing }}
         >
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
-            How Regal Pay Works
+            How Veridian Credit Systems Works
           </h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}

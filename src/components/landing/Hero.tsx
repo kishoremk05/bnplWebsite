@@ -110,7 +110,7 @@ export function Hero() {
                 custom={0.2}
                 className="text-xl sm:text-2xl text-muted-foreground max-w-xl mb-10 leading-relaxed font-light"
               >
-                Get more flexibility to shop the things you love—and split your payments into 4 smaller installments with Regal Pay.
+                Get more flexibility to shop the things you love—and split your payments into 4 smaller installments with Veridian Credit Systems.
               </motion.p>
 
               {/* Premium CTA Buttons */}
@@ -156,7 +156,7 @@ export function Hero() {
                 </div>
                 <div>
                   <p className="text-base font-bold text-foreground">Scan to download</p>
-                  <p className="text-sm text-muted-foreground">Get the Regal Pay app instantly</p>
+                  <p className="text-sm text-muted-foreground">Get the Veridian Credit Systems app instantly</p>
                 </div>
               </motion.div>
             </div>
@@ -195,7 +195,7 @@ export function Hero() {
 
                     {/* Phone Header */}
                     <div className="relative flex items-center justify-between mb-8">
-                      <span className="text-white text-base font-semibold">Regal Pay</span>
+                      <span className="text-white text-base font-semibold">Veridian Credit Systems</span>
                       <div className="flex gap-1.5">
                         <div className="w-2.5 h-2.5 rounded-full bg-white/60" />
                         <div className="w-2.5 h-2.5 rounded-full bg-white/60" />

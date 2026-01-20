@@ -64,10 +64,12 @@ export function AdminLayout({ children }: AdminLayoutProps) {
       >
         <div className="flex flex-col h-full">
           <div className="flex items-center gap-2 px-6 py-4 border-b border-border">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg gradient-primary shadow-glow">
-              <span className="text-lg font-bold text-primary-foreground">R</span>
-            </div>
-            <span className="font-display text-xl font-bold">RegalPay Admin</span>
+            <img 
+              src="/VeridianCreditSystemsLogo.jpg" 
+              alt="Veridian" 
+              className="h-8 w-8 rounded-lg object-cover"
+            />
+            <span className="font-display text-xl font-bold">Veridian Admin</span>
           </div>
 
           <div className="px-6 py-4 border-b border-border">
@@ -119,7 +121,12 @@ export function AdminLayout({ children }: AdminLayoutProps) {
           >
             <Menu className="w-5 h-5" />
           </Button>
-          <span className="font-display text-lg font-bold">RegalPay Admin</span>
+          <img 
+            src="/VeridianCreditSystemsLogo.jpg" 
+            alt="Veridian" 
+            className="h-8 w-8 rounded-lg object-cover"
+          />
+          <span className="font-display text-lg font-bold">Veridian Admin</span>
         </header>
 
         <main className="p-4 sm:p-6 lg:p-8">

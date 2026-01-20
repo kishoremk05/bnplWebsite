@@ -62,10 +62,12 @@ export function MerchantLayout({ children }: MerchantLayoutProps) {
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="flex items-center gap-2 px-6 py-4 border-b border-border">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg gradient-primary shadow-glow">
-              <span className="text-lg font-bold text-primary-foreground">R</span>
-            </div>
-            <span className="font-display text-xl font-bold">RegalPay</span>
+            <img 
+              src="/VeridianCreditSystemsLogo.jpg" 
+              alt="Veridian" 
+              className="h-8 w-8 rounded-lg object-cover"
+            />
+            <span className="font-display text-xl font-bold">Veridian</span>
           </div>
 
           {/* Business info */}
@@ -195,7 +197,12 @@ export function MerchantLayout({ children }: MerchantLayoutProps) {
           >
             <Menu className="w-5 h-5" />
           </Button>
-          <span className="font-display text-lg font-bold">RegalPay</span>
+          <img 
+            src="/VeridianCreditSystemsLogo.jpg" 
+            alt="Veridian" 
+            className="h-8 w-8 rounded-lg object-cover"
+          />
+          <span className="font-display text-lg font-bold">Veridian</span>
         </header>
 
         {/* Page content */}

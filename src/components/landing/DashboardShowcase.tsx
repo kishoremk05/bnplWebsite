@@ -241,7 +241,7 @@ export function DashboardShowcase() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3, duration: 0.5, ease: smoothEasing }}
                 >
-                  Shop in-store with Regal Pay!
+                  Shop in-store with Veridian Credit Systems!
                 </motion.h3>
                 <motion.p 
                   className="text-white/90 mb-8 max-w-sm text-lg drop-shadow-md"
@@ -250,7 +250,7 @@ export function DashboardShowcase() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.4, duration: 0.5, ease: smoothEasing }}
                 >
-                  Use Regal Pay at your favorite local stores. Split payments anywhere, anytime.
+                  Use Veridian Credit Systems at your favorite local stores. Split payments anywhere, anytime.
                 </motion.p>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}

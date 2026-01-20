@@ -162,7 +162,7 @@ export default function MerchantIntegration() {
       <div>
         <h1 className="text-3xl font-bold mb-2">Merchant Integration</h1>
         <p className="text-muted-foreground">
-          Integrate Regal Pay into your checkout flow
+          Integrate Veridian Credit Systems into your checkout flow
         </p>
       </div>
 
@@ -271,7 +271,7 @@ export default function MerchantIntegration() {
             <CardHeader>
               <CardTitle>Your API Keys</CardTitle>
               <CardDescription>
-                Manage your Regal Pay API keys
+                Manage your Veridian Credit Systems API keys
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -379,7 +379,7 @@ export default function MerchantIntegration() {
             <CardHeader>
               <CardTitle>Integration Guide</CardTitle>
               <CardDescription>
-                How to integrate Regal Pay into your website
+                How to integrate Veridian Credit Systems into your website
               </CardDescription>
             </CardHeader>
             <CardContent className="prose max-w-none">
@@ -387,21 +387,21 @@ export default function MerchantIntegration() {
               <p>Add the following code to your checkout page:</p>
               
               <pre className="bg-muted p-4 rounded-lg overflow-x-auto">
-                <code>{`<!-- Include Regal Pay SDK -->
-<script src="${window.location.origin}/sdk/regal-pay.js"></script>
+                <code>{`<!-- Include Veridian Credit Systems SDK -->
+<script src="${window.location.origin}/sdk/veridian-credit-systems.js"></script>
 
-<!-- Regal Pay Button Container -->
-<div id="regal-pay-button"></div>
+<!-- Veridian Credit Systems Button Container -->
+<div id="veridian-credit-systems-button"></div>
 
 <script>
-  // Initialize Regal Pay with your API key
-  const regalPay = new RegalPay('YOUR_API_KEY');
+  // Initialize Veridian Credit Systems with your API key
+  const veridianCreditSystems = new VeridianCreditSystems('YOUR_API_KEY');
 
   // Create checkout button
-  regalPay.createButton({
+  veridianCreditSystems.createButton({
     amount: 500.00,
     orderId: 'order_123',
-    containerId: 'regal-pay-button',
+    containerId: 'veridian-credit-systems-button',
     onSuccess: (data) => {
       console.log('Payment approved:', data);
       // Redirect to order confirmation
@@ -421,7 +421,7 @@ export default function MerchantIntegration() {
               
               <pre className="bg-muted p-4 rounded-lg overflow-x-auto">
                 <code>{`<!-- Add webhook meta tag -->
-<meta name="regal-pay-webhook" content="https://yoursite.com/webhook/regal-pay">`}</code>
+<meta name="veridian-webhook" content="https://yoursite.com/webhook/veridian">`}</code>
               </pre>
 
               <Alert>

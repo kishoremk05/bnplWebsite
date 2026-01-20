@@ -89,7 +89,7 @@ export default function CheckoutSuccess() {
                 <div>
                   <h3 className="font-semibold mb-1">Track Your Payments</h3>
                   <p className="text-sm text-muted-foreground">
-                    View your payment schedule in your Regal Pay dashboard
+                    View your payment schedule in your Veridian Credit Systems dashboard
                   </p>
                 </div>
               </div>

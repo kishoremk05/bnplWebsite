@@ -36,7 +36,7 @@ export default function AdminSettings() {
             </div>
             <div className="space-y-2">
               <Label>Maximum Credit Limit</Label>
-              <Input type="number" defaultValue="5000" />
+              <Input type="number" defaultValue="200" />
             </div>
             <Button>Save Settings</Button>
           </CardContent>

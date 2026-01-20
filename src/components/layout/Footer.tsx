@@ -16,7 +16,7 @@ const footerLinks = {
   ],
   business: [
     { label: "Merchant Support", href: "/merchants/support" },
-    { label: "Sell with Regal Pay", href: "/merchants" },
+    { label: "Sell with Veridian Credit Systems", href: "/merchants" },
     { label: "Developers portal", href: "/developers" },
     { label: "Operational status", href: "/status" },
     { label: "Platforms and partners", href: "/partners" },
@@ -222,7 +222,7 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Scan to download</p>
-                  <p className="text-xs text-muted-foreground">the Regal Pay app</p>
+                  <p className="text-xs text-muted-foreground">the Veridian Credit Systems app</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -262,7 +262,7 @@ export function Footer() {
 
             {/* Copyright */}
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Regal Pay. All Rights Reserved.
+              © {new Date().getFullYear()} Veridian Credit Systems. All Rights Reserved.
             </p>
           </motion.div>
         </motion.div>

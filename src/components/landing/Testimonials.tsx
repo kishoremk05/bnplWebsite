@@ -7,7 +7,7 @@ const smoothEasing = [0.16, 1, 0.3, 1] as const;
 
 const testimonials = [
   {
-    quote: "Regal Pay made it so easy to manage my purchases. I love the flexibility of paying in 4 installments!",
+    quote: "Veridian Credit Systems made it so easy to manage my purchases. I love the flexibility of paying in 4 installments!",
     author: "Sarah Chen",
     role: "Product Designer",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=90",
@@ -21,7 +21,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "I've recommended Regal Pay to all my friends. The app is beautiful and incredibly user-friendly.",
+    quote: "I've recommended Veridian Credit Systems to all my friends. The app is beautiful and incredibly user-friendly.",
     author: "Emily Watson",
     role: "Marketing Manager",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=90",
@@ -42,7 +42,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "I use Regal Pay for all my online shopping now. It's become an essential part of my routine.",
+    quote: "I use Veridian Credit Systems for all my online shopping now. It's become an essential part of my routine.",
     author: "David Kim",
     role: "Content Creator",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=90",

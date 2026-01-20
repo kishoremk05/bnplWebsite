@@ -24,7 +24,7 @@ export const RISK_THRESHOLDS = {
 export const CREDIT_LIMITS = {
     pending: 0,
     in_review: 0,
-    approved: 1000,
+    approved: 200,
     rejected: 0,
 };
 

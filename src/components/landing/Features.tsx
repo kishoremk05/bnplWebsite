@@ -10,7 +10,7 @@ const smoothEasing = [0.16, 1, 0.3, 1] as const;
 const features = [
   {
     title: "Brands & discounts you love",
-    description: "Access exclusive deals and discounts from your favorite brands when you pay with Regal Pay.",
+    description: "Access exclusive deals and discounts from your favorite brands when you pay with Veridian Credit Systems.",
     badge: "Recommended",
     bgClass: "bg-pastel-peach",
     image: "https://images.unsplash.com/photo-1607082350899-7e105aa886ae?w=400&q=80",
