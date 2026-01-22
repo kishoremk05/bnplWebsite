@@ -118,7 +118,11 @@ const Pilot = () => {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
-                  <span>Active e-commerce business with minimum $10K monthly revenue</span>
+                  <span>Active, licensed retail dispensaries with a minimum revenue of $300,000 annually</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-600 font-bold">•</span>
+                  <span>Single store operators preferred</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>

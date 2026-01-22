@@ -250,7 +250,7 @@ export function DashboardShowcase() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.4, duration: 0.5, ease: smoothEasing }}
                 >
-                  Use Veridian Credit Systems at your favorite local stores. Split payments anywhere, anytime.
+                  Use Veridian Credit Systems at your favorite local dispensary. Split payments anywhere, anytime.
                 </motion.p>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -280,7 +280,7 @@ export function DashboardShowcase() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, duration: 0.5, ease: smoothEasing }}
               >
-                <p className="text-white/70 text-sm mb-3 drop-shadow-md">Trusted by 500+ stores</p>
+                <p className="text-white/70 text-sm mb-3 drop-shadow-md">Trusted by 500+ dispensaries</p>
                 <div className="flex -space-x-3">
                   {[
                     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=90",

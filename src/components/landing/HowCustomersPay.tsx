@@ -90,7 +90,7 @@ export function HowCustomersPay() {
             How customers are paying<br />with Veridian Credit Systems
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose your category and see how easy it is to split payments
+            Choose your dispensary and see how easy it is to split payments
           </p>
         </motion.div>
 
