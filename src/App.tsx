@@ -35,6 +35,17 @@ import CheckoutCancel from "./pages/CheckoutCancel";
 import MerchantIntegration from "./pages/merchant/Integration";
 import MerchantCustomers from "./pages/merchant/Customers";
 import MerchantPayouts from "./pages/merchant/Payouts";
+import Trust from "./pages/Trust";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Merchants from "./pages/Merchants";
+import Pricing from "./pages/Pricing";
+import About from "./pages/About";
+import FAQ from "./pages/FAQ";
+import Contact from "./pages/Contact";
+import Pilot from "./pages/Pilot";
+import { ScrollToTop } from "./components/ScrollToTop";
+import HelpCenter from "./pages/HelpCenter";
 
 const queryClient = new QueryClient();
 
@@ -50,11 +61,25 @@ const App = () => (
             <div className="absolute inset-0 shadow-[inset_0_0_120px_rgba(139,92,246,0.12),inset_0_0_60px_rgba(99,102,241,0.08)]" />
           </div>
           
+          <ScrollToTop />
+          
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/admin-login" element={<AdminLogin />} />
+            
+            {/* Public Pages */}
+            <Route path="/trust" element={<Trust />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/merchants" element={<Merchants />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/pilot" element={<Pilot />} />
+            <Route path="/help" element={<HelpCenter />} />
             
             {/* Checkout Routes (Public) */}
             <Route path="/checkout/:sessionToken" element={<CheckoutPage />} />

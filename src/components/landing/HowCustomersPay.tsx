@@ -57,7 +57,7 @@ export function HowCustomersPay() {
   const installment = (paymentAmount / 4).toFixed(2);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
+    <section id="how-customers-pay" ref={sectionRef} className="py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
       {/* Premium background decorations */}
       <motion.div style={{ y }} className="absolute top-20 right-10 hidden lg:block">
         <div className="w-64 h-64 rounded-full bg-gradient-to-br from-emerald-200/40 to-amber-200/40" style={{ filter: 'blur(80px)' }} />

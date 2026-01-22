@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Shop", href: "/shop" },
-  { label: "For Business", href: "/merchants" },
+  { label: "Shop", href: "/#how-customers-pay" },
+  { label: "For Business", href: "/#merchant-cta" },
   { label: "How It Works", href: "/#how-it-works" },
-  { label: "Help", href: "/help" },
+  { label: "Help", href: "/#features" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +25,36 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Handle navigation clicks, especially for hash links
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const hash = href.substring(1); // Remove the leading '/'
+      
+      if (location.pathname !== '/') {
+        // Navigate to home page with hash
+        navigate(hash);
+      } else {
+        // Already on home page, just scroll
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+        // Update URL hash
+        window.history.pushState(null, '', hash);
+      }
+      setIsOpen(false);
+    }
+  };
 
   return (
     <header 
@@ -54,6 +85,7 @@ export function Navbar() {
               <Link
                 key={item.label}
                 to={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className={cn(
                   "text-sm font-medium transition-colors",
                   location.pathname === item.href
@@ -106,7 +138,7 @@ export function Navbar() {
                   <Link
                     key={item.label}
                     to={item.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className={cn(
                       "block px-4 py-3 rounded-xl text-sm font-medium transition-colors",
                       location.pathname === item.href

@@ -5,27 +5,21 @@ import { ArrowRight, Mail, Phone, MapPin, Twitter, Linkedin, Instagram, Facebook
 const footerLinks = {
   product: [
     { label: "How It Works", href: "/#how-it-works" },
-    { label: "For Shoppers", href: "/shop" },
     { label: "For Merchants", href: "/merchants" },
     { label: "Pricing", href: "/pricing" },
   ],
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Careers", href: "/careers" },
-    { label: "Press", href: "/press" },
-    { label: "Blog", href: "/blog" },
+    { label: "Trust & Compliance", href: "/trust" },
+    { label: "Contact", href: "/contact" },
   ],
   support: [
-    { label: "Help Center", href: "/help" },
-    { label: "Contact Us", href: "/contact" },
     { label: "FAQ", href: "/faq" },
-    { label: "Status", href: "/status" },
+    { label: "Help Center", href: "/help" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
-    { label: "Cookie Policy", href: "/cookies" },
-    { label: "Licenses", href: "/licenses" },
   ],
 };
 
@@ -191,20 +185,10 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-center items-center gap-4">
           <p className="text-slate-500 text-sm">
             © {new Date().getFullYear()} Veridian Credit Systems. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
-            <span className="text-slate-500 text-xs">Secure Payments</span>
-            <div className="flex gap-2">
-              {["Visa", "MC", "Amex"].map((card) => (
-                <div key={card} className="px-2 py-1 bg-slate-800 rounded text-xs text-slate-400">
-                  {card}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </footer>

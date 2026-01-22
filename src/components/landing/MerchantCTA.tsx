@@ -19,7 +19,7 @@ export function MerchantCTA() {
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.9]);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-white relative overflow-hidden">
+    <section id="merchant-cta" ref={sectionRef} className="py-32 bg-white relative overflow-hidden">
       {/* Premium background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-50/30 to-transparent" />
       

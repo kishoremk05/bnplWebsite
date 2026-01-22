@@ -180,7 +180,7 @@ export default function Login() {
           {/* Admin link */}
           <div className="mt-6 pt-6 border-t border-border text-center">
             <Link 
-              to="/admin/login" 
+              to="/admin-login" 
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Admin Portal →
