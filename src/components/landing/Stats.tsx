@@ -10,14 +10,14 @@ const stats = [
     value: "500K+", 
     label: "Happy Customers", 
     icon: Users,
-    color: "from-purple-500 to-indigo-600",
+    color: "from-emerald-500 to-emerald-700",
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=90",
   },
   { 
     value: "$10M+", 
     label: "Transactions", 
     icon: CreditCard,
-    color: "from-blue-500 to-cyan-600",
+    color: "from-emerald-600 to-teal-600",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=90",
   },
   { 
@@ -69,7 +69,7 @@ export function Stats() {
     <section ref={sectionRef} className="py-32 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
       {/* Premium background */}
       <motion.div style={{ y }} className="absolute top-10 right-16 hidden lg:block">
-        <div className="w-72 h-72 rounded-full bg-gradient-to-br from-purple-200/30 to-blue-200/30" style={{ filter: 'blur(100px)' }} />
+        <div className="w-72 h-72 rounded-full bg-gradient-to-br from-emerald-200/30 to-amber-200/30" style={{ filter: 'blur(100px)' }} />
       </motion.div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -86,9 +86,9 @@ export function Stats() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: smoothEasing }}
-            className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full"
+            className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-emerald-100 to-amber-100 rounded-full"
           >
-            <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-sm font-semibold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
               Trusted Worldwide
             </span>
           </motion.div>

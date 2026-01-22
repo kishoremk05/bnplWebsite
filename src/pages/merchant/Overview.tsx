@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { MerchantLayout } from '@/components/dashboard/merchant/MerchantLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { DollarSign, TrendingUp, Users, CheckCircle, Clock, XCircle, Loader2 } from 'lucide-react';
+import { Progress } from '@/components/ui/progress';
+import { DollarSign, TrendingUp, Users, CheckCircle, Clock, XCircle, Loader2, Wallet, AlertTriangle } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { getMerchantCapitalStatus, MerchantCapitalStatus } from '@/services/merchant-capital.service';
 
 interface MerchantStats {
   totalRevenue: number;
@@ -36,6 +38,7 @@ export default function MerchantOverview() {
   const [stats, setStats] = useState<MerchantStats | null>(null);
   const [recentApplications, setRecentApplications] = useState<RecentApplication[]>([]);
   const [revenueData, setRevenueData] = useState<any[]>([]);
+  const [capitalStatus, setCapitalStatus] = useState<MerchantCapitalStatus | null>(null);
 
   useEffect(() => {
     if (merchantProfile?.id) {
@@ -48,6 +51,10 @@ export default function MerchantOverview() {
     
     setLoading(true);
     try {
+      // Fetch capital status
+      const capital = await getMerchantCapitalStatus(merchantProfile.id);
+      setCapitalStatus(capital);
+
       const today = new Date().toISOString().split('T')[0];
       const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
 
@@ -188,7 +195,7 @@ export default function MerchantOverview() {
       value: String(stats?.totalCustomers || 0),
       change: 'Unique customers',
       icon: Users,
-      color: 'text-purple-500',
+      color: 'text-emerald-500',
     },
     {
       title: 'Approval Rate',
@@ -229,6 +236,42 @@ export default function MerchantOverview() {
             </Card>
           ))}
         </div>
+
+        {/* Capital Usage Widget */}
+        {capitalStatus && (
+          <Card className={capitalStatus.utilizationPercentage >= 80 ? 'border-orange-500' : ''}>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium flex items-center gap-2">
+                <Wallet className="w-4 h-4" />
+                Capital Usage
+              </CardTitle>
+              {capitalStatus.utilizationPercentage >= 80 && (
+                <Badge variant="outline" className="border-orange-500 text-orange-500">
+                  <AlertTriangle className="w-3 h-3 mr-1" />
+                  Near Limit
+                </Badge>
+              )}
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-baseline justify-between">
+                <span className="text-2xl font-bold">
+                  ${capitalStatus.currentDeployedCapital.toLocaleString()}
+                </span>
+                <span className="text-muted-foreground text-sm">
+                  of ${capitalStatus.capitalLimit.toLocaleString()}
+                </span>
+              </div>
+              <Progress 
+                value={capitalStatus.utilizationPercentage} 
+                className={capitalStatus.utilizationPercentage >= 80 ? '[&>div]:bg-orange-500' : ''}
+              />
+              <div className="flex justify-between text-xs text-muted-foreground">
+                <span>Available: ${capitalStatus.availableCapital.toLocaleString()}</span>
+                <span>{capitalStatus.utilizationPercentage.toFixed(1)}% used</span>
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Recent Applications & Quick Stats */}
         <div className="grid gap-4 md:grid-cols-2">

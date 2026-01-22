@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -7,27 +7,43 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Shop", href: "/shop" },
-  { label: "Business", href: "/merchants" },
-  { label: "What is Veridian Credit Systems", href: "/#how-it-works" },
+  { label: "For Business", href: "/merchants" },
+  { label: "How It Works", href: "/#how-it-works" },
   { label: "Help", href: "/help" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="absolute top-0 left-0 right-0 z-50">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+    <header 
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled 
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/50" 
+          : "bg-transparent"
+      )}
+    >
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-3">
             <img 
               src="/VeridianCreditSystemsLogo.jpg" 
               alt="Veridian Credit Systems" 
-              className="h-10 w-10 rounded-lg object-cover"
+              className="h-10 w-10 rounded-xl object-cover"
             />
-            <span className="font-display text-xl font-bold text-foreground hidden sm:inline">
+            <span className="font-bold text-xl text-slate-900 hidden sm:inline">
               Veridian
             </span>
           </Link>
@@ -41,8 +57,8 @@ export function Navbar() {
                 className={cn(
                   "text-sm font-medium transition-colors",
                   location.pathname === item.href
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-emerald-600"
+                    : "text-slate-600 hover:text-slate-900"
                 )}
               >
                 {item.label}
@@ -54,24 +70,24 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link 
               to="/login" 
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
             >
               Log in
             </Link>
             <Button 
               asChild 
-              className="rounded-full px-6 bg-black hover:bg-black/90 text-white"
+              className="rounded-xl px-6 h-11 bg-emerald-600 hover:bg-emerald-700 text-white font-medium shadow-sm"
             >
-              <Link to="/register">Sign up</Link>
+              <Link to="/register">Get Started</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-accent"
+            className="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
           >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
@@ -85,33 +101,36 @@ export function Navbar() {
               transition={{ duration: 0.2 }}
               className="md:hidden overflow-hidden mt-4"
             >
-              <div className="py-4 space-y-2 bg-white rounded-2xl shadow-soft p-4">
+              <div className="py-4 space-y-1 bg-white rounded-2xl shadow-lg border border-slate-200 p-4">
                 {navItems.map((item) => (
                   <Link
                     key={item.label}
                     to={item.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "block px-4 py-3 rounded-lg text-sm font-medium transition-colors",
+                      "block px-4 py-3 rounded-xl text-sm font-medium transition-colors",
                       location.pathname === item.href
-                        ? "text-foreground bg-accent"
-                        : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                        ? "text-emerald-600 bg-emerald-50"
+                        : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                     )}
                   >
                     {item.label}
                   </Link>
                 ))}
-                <div className="pt-4 space-y-2 border-t border-border">
+                <div className="pt-4 space-y-3 border-t border-slate-200 mt-4">
                   <Link 
                     to="/login" 
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground"
+                    className="block px-4 py-3 text-sm font-medium text-slate-600 hover:text-slate-900"
                   >
                     Log in
                   </Link>
-                  <Button className="w-full rounded-full bg-black hover:bg-black/90" asChild>
+                  <Button 
+                    className="w-full rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium" 
+                    asChild
+                  >
                     <Link to="/register" onClick={() => setIsOpen(false)}>
-                      Sign up
+                      Get Started
                     </Link>
                   </Button>
                 </div>

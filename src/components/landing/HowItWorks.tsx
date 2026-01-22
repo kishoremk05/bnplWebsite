@@ -21,7 +21,7 @@ const steps = [
     title: "Get instant approval",
     description: "Our system verifies your identity in seconds with minimal friction.",
     bgClass: "bg-pastel-blue",
-    color: "from-blue-500 to-indigo-600",
+    color: "from-emerald-500 to-teal-600",
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=300&q=80",
   },
   {
@@ -39,7 +39,7 @@ const steps = [
     title: "Enjoy your purchase",
     description: "Receive your order immediately and pay over time comfortably.",
     bgClass: "bg-lavender",
-    color: "from-purple-500 to-indigo-600",
+    color: "from-amber-500 to-amber-700",
     image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&q=80",
   },
 ];
@@ -117,7 +117,7 @@ export function HowItWorks() {
         {/* Animated connection line */}
         <div className="hidden lg:block absolute top-[340px] left-[12%] right-[12%] h-0.5 overflow-hidden">
           <motion.div 
-            className="h-full bg-gradient-to-r from-orange-300 via-blue-300 via-green-300 to-purple-300"
+            className="h-full bg-gradient-to-r from-orange-300 via-emerald-300 via-teal-300 to-amber-300"
             style={{ scaleX: lineScale, transformOrigin: "left" }}
           />
         </div>

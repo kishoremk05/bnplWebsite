@@ -1,8 +1,28 @@
 import { supabase } from '@/integrations/supabase/client';
-import { Tables } from '@/integrations/supabase/types';
 
-type CapitalPool = Tables<'capital_pool'>;
-type CapitalTransaction = Tables<'capital_transactions'>;
+// Define types inline since Tables helper is not available
+interface CapitalPool {
+    id: string;
+    total_capital: number;
+    available_capital: number;
+    reserved_capital: number;
+    deployed_capital: number;
+    created_at: string;
+    updated_at: string;
+}
+
+interface CapitalTransaction {
+    id?: string;
+    transaction_type: string;
+    amount: number;
+    application_id: string | null;
+    settlement_id: string | null;
+    funding_source_id: string | null;
+    description: string;
+    balance_before: number;
+    balance_after: number;
+    created_at?: string;
+}
 
 export interface CapitalStatus {
     totalCapital: number;
@@ -221,6 +241,13 @@ export async function collectPayment(
     applicationId: string
 ): Promise<{ success: boolean; error?: string }> {
     try {
+        // Get application to find merchant
+        const { data: application, error: appError } = await supabase
+            .from('bnpl_applications')
+            .select('merchant_id')
+            .eq('id', applicationId)
+            .single();
+
         // Get current capital pool
         const { data: pool, error: fetchError } = await supabase
             .from('capital_pool')
@@ -242,6 +269,23 @@ export async function collectPayment(
 
         if (updateError) {
             return { success: false, error: 'Failed to collect payment' };
+        }
+
+        // Release merchant capital if application found
+        if (application?.merchant_id) {
+            const { data: merchant, error: merchantError } = await supabase
+                .from('merchant_profiles')
+                .select('current_deployed_capital')
+                .eq('id', application.merchant_id)
+                .single();
+
+            if (!merchantError && merchant) {
+                const newDeployed = Math.max(0, (merchant.current_deployed_capital || 0) - amount);
+                await supabase
+                    .from('merchant_profiles')
+                    .update({ current_deployed_capital: newDeployed })
+                    .eq('id', application.merchant_id);
+            }
         }
 
         // Log transaction

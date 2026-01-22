@@ -6,7 +6,7 @@ export default function AdminOverview() {
   const stats = [
     { title: 'Total Users', value: '0', icon: Users, color: 'text-blue-500' },
     { title: 'Active Merchants', value: '0', icon: Building, color: 'text-green-500' },
-    { title: 'Platform Revenue', value: '$0', icon: DollarSign, color: 'text-purple-500' },
+    { title: 'Platform Revenue', value: '$0', icon: DollarSign, color: 'text-emerald-500' },
     { title: 'Growth Rate', value: '0%', icon: TrendingUp, color: 'text-orange-500' },
   ];
 

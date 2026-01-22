@@ -4,10 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { CheckCircle, Clock, XCircle, Loader2 } from 'lucide-react';
+import { CheckCircle, Clock, XCircle, Loader2, FileText } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { checkMerchantCapitalLimit, deployMerchantCapital, getMerchantCapitalStatus, MerchantCapitalStatus } from '@/services/merchant-capital.service';
 
 interface Application {
   id: string;
@@ -30,12 +31,20 @@ export default function MerchantRequests() {
   const { toast } = useToast();
   const [loading, setLoading] = useState(true);
   const [applications, setApplications] = useState<Application[]>([]);
+  const [capitalStatus, setCapitalStatus] = useState<MerchantCapitalStatus | null>(null);
 
   useEffect(() => {
     if (merchantProfile?.id) {
       fetchApplications();
+      fetchCapitalStatus();
     }
   }, [merchantProfile?.id]);
+
+  async function fetchCapitalStatus() {
+    if (!merchantProfile?.id) return;
+    const status = await getMerchantCapitalStatus(merchantProfile.id);
+    setCapitalStatus(status);
+  }
 
   async function fetchApplications() {
     if (!merchantProfile?.id) return;
@@ -82,6 +91,21 @@ export default function MerchantRequests() {
         .single();
 
       if (appError || !application) throw new Error('Application not found');
+
+      // Check merchant capital limit before approving
+      const capitalCheck = await checkMerchantCapitalLimit(
+        merchantProfile.id,
+        Number(application.total_amount)
+      );
+
+      if (!capitalCheck.canApprove) {
+        toast({
+          title: 'Capital Limit Reached',
+          description: capitalCheck.error || 'You have reached your capital limit. Wait for customer repayments to approve more applications.',
+          variant: 'destructive',
+        });
+        return;
+      }
 
       // Charge down payment via Stripe if amount > 0
       if (application.down_payment > 0) {
@@ -206,6 +230,10 @@ export default function MerchantRequests() {
 
       if (scheduleError) throw scheduleError;
 
+      // Update merchant's deployed capital
+      await deployMerchantCapital(merchantProfile.id, Number(application.total_amount));
+      fetchCapitalStatus(); // Refresh capital status
+
       toast({
         title: 'Application Approved',
         description: application.down_payment > 0 
@@ -269,16 +297,31 @@ export default function MerchantRequests() {
   return (
     <MerchantLayout>
       <div className="space-y-6">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">BNPL Requests</h1>
-          <p className="text-muted-foreground">Review and manage customer BNPL applications</p>
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight">BNPL Requests</h1>
+            <p className="text-muted-foreground">Review and manage customer BNPL applications</p>
+          </div>
+          <Badge variant="secondary" className="text-lg px-4 py-2">
+            <FileText className="w-4 h-4 mr-2" />
+            {applications.length} Total Requests
+          </Badge>
         </div>
 
-        <Tabs defaultValue="pending">
-          <TabsList>
-            <TabsTrigger value="pending">Pending ({pendingRequests.length})</TabsTrigger>
-            <TabsTrigger value="approved">Approved ({approvedRequests.length})</TabsTrigger>
-            <TabsTrigger value="rejected">Rejected ({rejectedRequests.length})</TabsTrigger>
+        <Tabs defaultValue="pending" className="w-full">
+          <TabsList className="grid w-full grid-cols-3 lg:w-auto lg:inline-grid">
+            <TabsTrigger value="pending" className="gap-2">
+              <Clock className="w-4 h-4" />
+              Pending ({pendingRequests.length})
+            </TabsTrigger>
+            <TabsTrigger value="approved" className="gap-2">
+              <CheckCircle className="w-4 h-4" />
+              Approved ({approvedRequests.length})
+            </TabsTrigger>
+            <TabsTrigger value="rejected" className="gap-2">
+              <XCircle className="w-4 h-4" />
+              Rejected ({rejectedRequests.length})
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="pending" className="space-y-4">

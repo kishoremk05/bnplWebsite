@@ -21,13 +21,13 @@ export function HeroWithZoom() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#EAEAFF] to-[#E5E5FF]">
+    <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-emerald-50 to-emerald-100/50">
       {/* Zooming Background Image */}
       <motion.div 
         className="absolute inset-0 will-change-transform"
         style={{ scale, opacity: imageOpacity }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#EAEAFF]/80 via-[#E5E5FF]/60 to-[#EAEAFF]/80 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/80 via-emerald-100/60 to-emerald-50/80 z-10" />
         <img 
           src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=90"
           alt="Shopping experience"
@@ -64,7 +64,7 @@ export function HeroWithZoom() {
             { rating: "4.7 ★", platform: "Trustpilot" },
           ].map((item, i) => (
             <div key={i} className="text-center">
-              <p className="text-2xl font-bold text-purple-600">{item.rating}</p>
+              <p className="text-2xl font-bold text-emerald-600">{item.rating}</p>
               <p className="text-sm text-gray-700">{item.platform}</p>
             </div>
           ))}

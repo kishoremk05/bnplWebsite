@@ -79,10 +79,10 @@ export function Testimonials() {
   const y = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-32 bg-gradient-to-b from-white via-emerald-50/30 to-white relative overflow-hidden">
       {/* Premium background decoration */}
       <motion.div style={{ y }} className="absolute top-20 right-10 hidden lg:block">
-        <div className="w-64 h-64 rounded-full bg-gradient-to-br from-purple-200/40 to-pink-200/40" style={{ filter: 'blur(80px)' }} />
+        <div className="w-64 h-64 rounded-full bg-gradient-to-br from-emerald-200/40 to-amber-200/40" style={{ filter: 'blur(80px)' }} />
       </motion.div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -99,9 +99,9 @@ export function Testimonials() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: smoothEasing }}
-            className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full"
+            className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-emerald-100 to-amber-100 rounded-full"
           >
-            <span className="text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="text-sm font-semibold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
               Customer Love
             </span>
           </motion.div>
@@ -115,7 +115,7 @@ export function Testimonials() {
             transition={{ delay: 0.15, duration: 0.6, ease: smoothEasing }}
             className="text-xl text-muted-foreground"
           >
-            We love and grow with our clients 💙
+            We love and grow with our clients 💚
           </motion.p>
         </motion.div>
 
@@ -140,7 +140,7 @@ export function Testimonials() {
             >
               <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 relative overflow-hidden">
                 {/* Premium gradient overlay */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Premium rating */}
                 <motion.div 
@@ -165,14 +165,14 @@ export function Testimonials() {
 
                 {/* Quote */}
                 <blockquote className="text-foreground text-lg leading-relaxed mb-8 relative">
-                  <span className="text-5xl text-purple-200 absolute -top-4 -left-2 font-serif">"</span>
+                  <span className="text-5xl text-emerald-200 absolute -top-4 -left-2 font-serif">"</span>
                   <span className="relative">{testimonial.quote}</span>
                 </blockquote>
 
                 {/* Premium author section */}
                 <div className="flex items-center gap-4 relative">
                   <motion.div 
-                    className="relative w-14 h-14 rounded-full overflow-hidden shadow-lg ring-4 ring-purple-100 group-hover:ring-purple-200 transition-all duration-300"
+                    className="relative w-14 h-14 rounded-full overflow-hidden shadow-lg ring-4 ring-emerald-100 group-hover:ring-emerald-200 transition-all duration-300"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -190,7 +190,7 @@ export function Testimonials() {
 
                 {/* Quote decoration */}
                 <div className="absolute bottom-4 right-4 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                  <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor" className="text-purple-500">
+                  <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor" className="text-emerald-500">
                     <path d="M15 30C15 21.716 21.716 15 30 15V9C18.402 9 9 18.402 9 30V51H27V30H15ZM39 30C39 21.716 45.716 15 54 15V9C42.402 9 33 18.402 33 30V51H51V30H39Z" />
                   </svg>
                 </div>

@@ -49,13 +49,13 @@ export function Hero() {
   return (
     <section ref={containerRef} className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        <div className="gradient-lavender rounded-[48px] p-10 sm:p-14 lg:p-20 relative overflow-hidden shadow-[0_30px_90px_rgb(0,0,0,0.12)]">
+        <div className="bg-gradient-to-br from-emerald-50 via-emerald-100/50 to-amber-50/30 rounded-[48px] p-10 sm:p-14 lg:p-20 relative overflow-hidden shadow-[0_30px_90px_rgb(0,0,0,0.12)]">
           {/* Premium blended background image with parallax */}
           <motion.div 
             style={{ y: y1 }}
             className="absolute inset-0 opacity-30 will-change-transform"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#EAEAFF] via-[#E5E5FF]/70 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/80 via-emerald-50/70 to-transparent z-10" />
             <img 
               src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=90"
               alt="Shopping experience"
@@ -65,8 +65,8 @@ export function Hero() {
           </motion.div>
 
           {/* Premium glow effects */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-white/50 to-purple-200/30 rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" style={{ filter: 'blur(100px)' }} />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-200/30 to-white/40 rounded-full translate-y-1/3 -translate-x-1/4 pointer-events-none" style={{ filter: 'blur(80px)' }} />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-white/50 to-emerald-200/30 rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" style={{ filter: 'blur(100px)' }} />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-amber-200/30 to-white/40 rounded-full translate-y-1/3 -translate-x-1/4 pointer-events-none" style={{ filter: 'blur(80px)' }} />
 
           <div className="relative grid lg:grid-cols-2 gap-16 items-center z-10">
             {/* Left Content - Enhanced */}
@@ -97,7 +97,7 @@ export function Hero() {
                 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-[1.05] text-balance mb-8"
               >
                 Elevate your{" "}
-                <span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-amber-600 bg-clip-text text-transparent">
                   shopping experience
                 </span>
               </motion.h1>
@@ -176,8 +176,8 @@ export function Hero() {
                 transition={{ duration: 0.3, ease: smoothEasing }}
               >
                 {/* Premium multi-layer shadow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-[48px] -z-10" style={{ filter: 'blur(50px)' }} />
-                <div className="absolute inset-0 bg-purple-400/10 rounded-[48px] -z-20 scale-110" style={{ filter: 'blur(60px)' }} />
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-emerald-600/20 rounded-[48px] -z-10" style={{ filter: 'blur(50px)' }} />
+                <div className="absolute inset-0 bg-emerald-400/10 rounded-[48px] -z-20 scale-110" style={{ filter: 'blur(60px)' }} />
                 
                 {/* Premium Phone Frame */}
                 <div className="bg-white rounded-[48px] p-4 shadow-[0_30px_80px_rgba(0,0,0,0.2)] border-4 border-white/50">
@@ -209,10 +209,10 @@ export function Hero() {
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.7, type: "spring", stiffness: 200 }}
-                        className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center mb-5 shadow-2xl relative"
+                        className="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center mb-5 shadow-2xl relative"
                       >
                         <span className="text-white text-3xl font-bold">4x</span>
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-full blur-lg opacity-50 -z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full blur-lg opacity-50 -z-10" />
                       </motion.div>
                       <h3 className="text-white text-2xl font-bold mb-2">Pay in 4</h3>
                       <p className="text-white/80 text-base mb-8">Split into 4 interest-free payments</p>

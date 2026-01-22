@@ -21,11 +21,11 @@ export function MerchantCTA() {
   return (
     <section ref={sectionRef} className="py-32 bg-white relative overflow-hidden">
       {/* Premium background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-50/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-50/30 to-transparent" />
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          className="relative rounded-[48px] overflow-hidden min-h-[600px] shadow-[0_30px_90px_rgb(0,0,0,0.15)] border-4 border-purple-200/50"
+          className="relative rounded-[48px] overflow-hidden min-h-[600px] shadow-[0_30px_90px_rgb(0,0,0,0.15)] border-4 border-emerald-200/50"
           style={{ scale, opacity }}
         >
           {/* Premium Background Image */}
@@ -126,7 +126,7 @@ export function MerchantCTA() {
                 <Button 
                   asChild
                   size="lg"
-                  className="rounded-full px-10 py-7 bg-gradient-to-r from-purple-200 to-purple-300 hover:from-purple-300 hover:to-purple-400 text-black font-bold text-lg shadow-[0_12px_40px_rgba(216,180,254,0.5)] hover:shadow-[0_16px_50px_rgba(216,180,254,0.7)] transition-all duration-300"
+                  className="rounded-full px-10 py-7 bg-gradient-to-r from-amber-200 to-amber-300 hover:from-amber-300 hover:to-amber-400 text-black font-bold text-lg shadow-[0_12px_40px_rgba(217,175,55,0.4)] hover:shadow-[0_16px_50px_rgba(217,175,55,0.6)] transition-all duration-300"
                 >
                   <Link to="/merchants">
                     Become a Merchant
@@ -137,7 +137,7 @@ export function MerchantCTA() {
           </div>
 
           {/* Premium gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 via-transparent to-transparent pointer-events-none" />
         </motion.div>
       </div>
     </section>

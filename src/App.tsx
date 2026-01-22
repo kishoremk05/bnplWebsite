@@ -33,6 +33,8 @@ import CheckoutPage from "./pages/CheckoutPage";
 import CheckoutSuccess from "./pages/CheckoutSuccess";
 import CheckoutCancel from "./pages/CheckoutCancel";
 import MerchantIntegration from "./pages/merchant/Integration";
+import MerchantCustomers from "./pages/merchant/Customers";
+import MerchantPayouts from "./pages/merchant/Payouts";
 
 const queryClient = new QueryClient();
 
@@ -120,6 +122,16 @@ const App = () => (
             <Route path="/merchant/integration" element={
               <ProtectedRoute allowedRoles={['merchant']}>
                 <MerchantIntegration />
+              </ProtectedRoute>
+            } />
+            <Route path="/merchant/customers" element={
+              <ProtectedRoute allowedRoles={['merchant']}>
+                <MerchantCustomers />
+              </ProtectedRoute>
+            } />
+            <Route path="/merchant/payouts" element={
+              <ProtectedRoute allowedRoles={['merchant']}>
+                <MerchantPayouts />
               </ProtectedRoute>
             } />
             
