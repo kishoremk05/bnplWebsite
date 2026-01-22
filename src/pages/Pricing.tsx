@@ -23,6 +23,7 @@ const Pricing = () => {
       name: "Starter",
       price: "2.9",
       period: "per transaction",
+      annualFee: "3,000",
       description: "Perfect for small businesses getting started",
       features: [
         "Up to $50K monthly volume",
@@ -39,6 +40,7 @@ const Pricing = () => {
       name: "Growth",
       price: "2.4",
       period: "per transaction",
+      annualFee: "6,000",
       description: "For growing businesses with higher volume",
       features: [
         "Up to $250K monthly volume",
@@ -57,6 +59,7 @@ const Pricing = () => {
       name: "Enterprise",
       price: "Custom",
       period: "volume pricing",
+      annualFee: "12,000",
       description: "Tailored solutions for large businesses",
       features: [
         "Unlimited monthly volume",
@@ -193,20 +196,35 @@ const Pricing = () => {
                     <h3 className="font-display text-2xl font-bold mb-2">{plan.name}</h3>
                     <p className="text-muted-foreground text-sm mb-6">{plan.description}</p>
                     
-                    <div className="flex items-baseline gap-2 mb-2">
-                      {plan.price !== "Custom" ? (
-                        <>
-                          <span className="text-5xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
-                            {plan.price}%
-                          </span>
-                        </>
-                      ) : (
-                        <span className="text-5xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
-                          {plan.price}
+                    {/* Annual License Fee */}
+                    <div className="mb-4 pb-4 border-b border-gray-200">
+                      <p className="text-xs text-muted-foreground mb-1">Annual Platform License</p>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-3xl font-bold text-foreground">
+                          ${plan.annualFee}
                         </span>
-                      )}
+                        <span className="text-sm text-muted-foreground">/year</span>
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground">{plan.period}</p>
+
+                    {/* Transaction Fee */}
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-1">Transaction Fee</p>
+                      <div className="flex items-baseline gap-2 mb-2">
+                        {plan.price !== "Custom" ? (
+                          <>
+                            <span className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
+                              {plan.price}%
+                            </span>
+                          </>
+                        ) : (
+                          <span className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
+                            {plan.price}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-sm text-muted-foreground">{plan.period}</p>
+                    </div>
                   </div>
 
                   <ul className="space-y-4 mb-8">
@@ -256,8 +274,16 @@ const Pricing = () => {
             <div className="space-y-4">
               {[
                 {
+                  q: "What does the annual license fee cover?",
+                  a: "The annual platform license fee gives you full access to the Veridian platform, including your merchant dashboard, API access, analytics tools, customer support tier, and all platform features included in your plan. This is separate from transaction fees."
+                },
+                {
+                  q: "Are there any other fees besides the annual license and transaction fees?",
+                  a: "No! Our pricing is completely transparent. You pay an annual license fee for platform access and a percentage fee per transaction. There are no hidden fees, setup costs, or monthly minimums."
+                },
+                {
                   q: "Are there any setup fees or monthly minimums?",
-                  a: "No! There are zero setup fees and no monthly minimums. You only pay when you process transactions."
+                  a: "There are zero setup fees and no monthly minimums. You pay an annual license fee for platform access and only pay transaction fees when you process transactions."
                 },
                 {
                   q: "When do I receive my funds?",

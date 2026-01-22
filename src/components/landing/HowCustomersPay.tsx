@@ -158,7 +158,7 @@ export function HowCustomersPay() {
               </div>
 
               {/* Payment Schedule */}
-              <p className="text-sm text-gray-500 mb-2">4 bi-weekly payments of</p>
+              <p className="text-sm text-gray-500 mb-2">4 weekly payments of</p>
               <motion.p 
                 className="text-4xl font-bold text-foreground mb-8"
                 key={`amount-${activeTab}`}
@@ -190,7 +190,7 @@ export function HowCustomersPay() {
                       )}
                     </div>
                     <p className="text-sm font-semibold text-foreground">${installment}</p>
-                    <p className="text-xs text-gray-500">{num === 1 ? 'Today' : `${num} weeks`}</p>
+                    <p className="text-xs text-gray-500">{num === 1 ? 'Today' : `Week ${num}`}</p>
                   </motion.div>
                 ))}
               </div>

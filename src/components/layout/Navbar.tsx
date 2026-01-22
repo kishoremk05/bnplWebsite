@@ -9,6 +9,7 @@ const navItems = [
   { label: "Shop", href: "/#how-customers-pay" },
   { label: "For Business", href: "/#merchant-cta" },
   { label: "How It Works", href: "/#how-it-works" },
+  { label: "Pilot Program", href: "/pilot" },
   { label: "Help", href: "/#features" },
 ];
 

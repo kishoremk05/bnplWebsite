@@ -148,9 +148,9 @@ const Pilot = () => {
               </h3>
               <div className="space-y-6">
                 {[
-                  { phase: "Week 1-2", title: "Onboarding & Setup", description: "Complete setup with dedicated support team", color: "from-emerald-500 to-emerald-600" },
-                  { phase: "Week 3-8", title: "Active Testing", description: "Process transactions and provide feedback", color: "from-amber-500 to-amber-600" },
-                  { phase: "Week 9-12", title: "Optimization", description: "Fine-tune integration and prepare for full launch", color: "from-emerald-600 to-teal-600" }
+                  { phase: "Week 1", title: "Onboarding & Setup", description: "Complete setup with dedicated support team", color: "from-emerald-500 to-emerald-600" },
+                  { phase: "Week 2-7", title: "Active Testing", description: "Process transactions and provide feedback", color: "from-amber-500 to-amber-600" },
+                  { phase: "Week 8-12", title: "Optimization", description: "Fine-tune integration and prepare for full launch", color: "from-emerald-600 to-teal-600" }
                 ].map((item, index) => (
                   <div key={index} className="flex gap-6">
                     <div className={`flex-shrink-0 w-24 h-24 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center text-white font-bold shadow-lg`}>

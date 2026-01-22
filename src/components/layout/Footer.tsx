@@ -10,6 +10,7 @@ const footerLinks = {
   ],
   company: [
     { label: "About Us", href: "/about" },
+    { label: "Pilot Program", href: "/pilot" },
     { label: "Trust & Compliance", href: "/trust" },
     { label: "Contact", href: "/contact" },
   ],
