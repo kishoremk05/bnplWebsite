@@ -10,7 +10,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { getAuditLogs } from '@/services/audit-logger.service';
 import { 
   Shield, FileText, AlertTriangle, Clock, CheckCircle, 
-  Search, Download, Loader2, User, Calendar 
+  Search, Download, Loader2, User, Calendar, ExternalLink 
 } from 'lucide-react';
 
 interface AuditLogEntry {
@@ -24,19 +24,24 @@ interface AuditLogEntry {
   ip_address: string;
   user_agent: string;
   created_at: string;
+  third_party_provider?: string;
+  compliance_category?: string;
   users_extended?: {
     full_name: string;
     role: string;
   };
 }
 
-interface KYCDocument {
+// COMPLIANT: Replaced KYCDocument with PersonaVerification
+interface PersonaVerification {
   id: string;
   customer_id: string;
-  document_type: string;
-  file_name: string;
-  status: string;
-  created_at: string;
+  persona_inquiry_id: string;
+  persona_verification_id: string | null;
+  verification_status: string;
+  verification_type: string | null;
+  initiated_at: string;
+  completed_at: string | null;
   customer_profiles?: {
     users_extended?: {
       full_name: string;
@@ -47,9 +52,9 @@ interface KYCDocument {
 export default function AdminCompliance() {
   const [loading, setLoading] = useState(true);
   const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
-  const [kycDocuments, setKYCDocuments] = useState<KYCDocument[]>([]);
+  const [verifications, setVerifications] = useState<PersonaVerification[]>([]);
   const [stats, setStats] = useState({
-    kycPending: 0,
+    verificationsInProgress: 0,
     complianceIssues: 0,
     auditCount: 0,
     defaultedAccounts: 0,
@@ -68,25 +73,26 @@ export default function AdminCompliance() {
       const logs = await getAuditLogs({ limit: 50 });
       setAuditLogs(logs as any);
 
-      // Fetch KYC documents pending review
-      const { data: kycDocs } = await supabase
-        .from('kyc_documents')
+      // COMPLIANT: Fetch Persona verifications instead of KYC documents
+      // Veridian does NOT store ID documents - only verification references
+      const { data: personaVerifications } = await supabase
+        .from('persona_verifications')
         .select(`
           *,
           customer_profiles (
             users_extended (full_name)
           )
         `)
-        .eq('status', 'pending')
+        .in('verification_status', ['pending', 'in_progress', 'needs_review'])
         .order('created_at', { ascending: false });
 
-      setKYCDocuments((kycDocs || []) as any);
+      setVerifications((personaVerifications || []) as any);
 
-      // Fetch stats
-      const { count: kycPending } = await supabase
-        .from('kyc_documents')
+      // Fetch stats - using persona_verifications instead of kyc_documents
+      const { count: verificationsInProgress } = await supabase
+        .from('persona_verifications')
         .select('*', { count: 'exact', head: true })
-        .eq('status', 'pending');
+        .in('verification_status', ['pending', 'in_progress', 'needs_review']);
 
       const { count: defaulted } = await supabase
         .from('bnpl_applications')
@@ -94,8 +100,8 @@ export default function AdminCompliance() {
         .eq('status', 'defaulted');
 
       setStats({
-        kycPending: kycPending || 0,
-        complianceIssues: 0, // No issues tracking yet
+        verificationsInProgress: verificationsInProgress || 0,
+        complianceIssues: 0,
         auditCount: logs.length,
         defaultedAccounts: defaulted || 0,
       });
@@ -109,10 +115,28 @@ export default function AdminCompliance() {
 
   const getActionBadge = (action: string) => {
     if (action.includes('approved')) return <Badge className="bg-green-500">{action}</Badge>;
-    if (action.includes('rejected')) return <Badge variant="destructive">{action}</Badge>;
+    if (action.includes('rejected') || action.includes('declined')) return <Badge variant="destructive">{action}</Badge>;
     if (action.includes('created')) return <Badge variant="secondary">{action}</Badge>;
     if (action.includes('login')) return <Badge variant="outline">{action}</Badge>;
     return <Badge variant="outline">{action}</Badge>;
+  };
+
+  const getStatusBadge = (status: string) => {
+    switch (status) {
+      case 'approved':
+      case 'completed':
+        return <Badge className="bg-green-500">{status}</Badge>;
+      case 'declined':
+      case 'failed':
+        return <Badge variant="destructive">{status}</Badge>;
+      case 'pending':
+      case 'in_progress':
+        return <Badge className="bg-yellow-500">{status}</Badge>;
+      case 'needs_review':
+        return <Badge className="bg-orange-500">{status}</Badge>;
+      default:
+        return <Badge variant="outline">{status}</Badge>;
+    }
   };
 
   const filteredLogs = auditLogs.filter(log => {
@@ -128,13 +152,15 @@ export default function AdminCompliance() {
 
   const exportAuditLogs = () => {
     const csv = [
-      ['Timestamp', 'User', 'Action', 'Resource Type', 'Resource ID', 'IP Address'].join(','),
+      ['Timestamp', 'User', 'Action', 'Resource Type', 'Resource ID', 'Provider', 'Category', 'IP Address'].join(','),
       ...filteredLogs.map(log => [
         log.created_at,
         log.users_extended?.full_name || 'System',
         log.action,
         log.resource_type,
         log.resource_id || 'N/A',
+        log.third_party_provider || 'N/A',
+        log.compliance_category || 'N/A',
         log.ip_address || 'N/A',
       ].join(','))
     ].join('\n');
@@ -145,6 +171,11 @@ export default function AdminCompliance() {
     a.href = url;
     a.download = `audit_logs_${new Date().toISOString().split('T')[0]}.csv`;
     a.click();
+  };
+
+  // COMPLIANT: Open Persona dashboard to review verification
+  const openPersonaDashboard = (personaInquiryId: string) => {
+    window.open(`https://app.withpersona.com/dashboard/inquiries/${personaInquiryId}`, '_blank');
   };
 
   if (loading) {
@@ -165,16 +196,33 @@ export default function AdminCompliance() {
           <p className="text-muted-foreground">Monitor platform compliance, audit logs, and regulatory requirements</p>
         </div>
 
+        {/* Compliance Notice */}
+        <Card className="border-emerald-200 bg-emerald-50/50">
+          <CardContent className="pt-4">
+            <div className="flex items-start gap-3">
+              <Shield className="h-5 w-5 text-emerald-600 mt-0.5" />
+              <div>
+                <p className="font-medium text-emerald-800">Data Compliance Active</p>
+                <p className="text-sm text-emerald-700">
+                  Veridian does not store ID documents, SSN, credit scores, or bank credentials. 
+                  All identity verification is handled by Persona, credit checks by Experian, 
+                  and bank verification by Plaid. We retain only verification references and decision outcomes.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Stats */}
         <div className="grid gap-4 md:grid-cols-4">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium">KYC Pending</CardTitle>
+              <CardTitle className="text-sm font-medium">Verifications In Progress</CardTitle>
               <FileText className="h-4 w-4 text-yellow-500" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{stats.kycPending}</div>
-              <p className="text-xs text-muted-foreground">Documents awaiting review</p>
+              <div className="text-2xl font-bold">{stats.verificationsInProgress}</div>
+              <p className="text-xs text-muted-foreground">Pending Persona verifications</p>
             </CardContent>
           </Card>
           <Card>
@@ -204,7 +252,7 @@ export default function AdminCompliance() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-green-500">Active</div>
-              <p className="text-xs text-muted-foreground">All systems operational</p>
+              <p className="text-xs text-muted-foreground">Golden Rule compliant</p>
             </CardContent>
           </Card>
         </div>
@@ -212,7 +260,9 @@ export default function AdminCompliance() {
         <Tabs defaultValue="audit-logs">
           <TabsList>
             <TabsTrigger value="audit-logs">Audit Logs</TabsTrigger>
-            <TabsTrigger value="kyc-review">KYC Review ({stats.kycPending})</TabsTrigger>
+            <TabsTrigger value="verifications">
+              Verifications ({stats.verificationsInProgress})
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="audit-logs" className="space-y-4">
@@ -239,6 +289,7 @@ export default function AdminCompliance() {
                       <SelectItem value="rejected">Rejections</SelectItem>
                       <SelectItem value="created">Created</SelectItem>
                       <SelectItem value="login">Logins</SelectItem>
+                      <SelectItem value="compliance">Compliance</SelectItem>
                     </SelectContent>
                   </Select>
                   <Button variant="outline" onClick={exportAuditLogs}>
@@ -269,6 +320,11 @@ export default function AdminCompliance() {
                           <div className="flex items-center gap-2">
                             {getActionBadge(log.action)}
                             <span className="text-sm text-muted-foreground">{log.resource_type}</span>
+                            {log.third_party_provider && (
+                              <Badge variant="outline" className="text-xs">
+                                {log.third_party_provider}
+                              </Badge>
+                            )}
                           </div>
                           <div className="flex items-center gap-4 text-sm text-muted-foreground">
                             <span className="flex items-center gap-1">
@@ -297,46 +353,76 @@ export default function AdminCompliance() {
             </Card>
           </TabsContent>
 
-          <TabsContent value="kyc-review" className="space-y-4">
+          <TabsContent value="verifications" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>Pending KYC Documents</CardTitle>
-                <CardDescription>Review and approve customer identity documents</CardDescription>
+                <CardTitle>Persona Verification Queue</CardTitle>
+                <CardDescription>
+                  Review customer identity verifications on Persona's secure platform. 
+                  Veridian does not store ID documents.
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                {kycDocuments.length === 0 ? (
+                {verifications.length === 0 ? (
                   <div className="text-center py-8 text-muted-foreground">
                     <CheckCircle className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                    <p>No pending KYC documents</p>
-                    <p className="text-sm">All documents have been reviewed</p>
+                    <p>No pending verifications</p>
+                    <p className="text-sm">All verifications have been processed</p>
                   </div>
                 ) : (
                   <div className="space-y-3">
-                    {kycDocuments.map((doc) => (
-                      <div key={doc.id} className="flex items-center justify-between p-4 border rounded-lg">
+                    {verifications.map((verification) => (
+                      <div key={verification.id} className="flex items-center justify-between p-4 border rounded-lg">
                         <div className="flex items-center gap-4">
                           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                             <FileText className="w-5 h-5 text-primary" />
                           </div>
                           <div>
                             <p className="font-medium">
-                              {(doc.customer_profiles as any)?.users_extended?.full_name || 'Unknown'}
+                              {(verification.customer_profiles as any)?.users_extended?.full_name || 'Unknown'}
                             </p>
                             <p className="text-sm text-muted-foreground">
-                              {doc.document_type} • {doc.file_name}
+                              {verification.verification_type || 'Identity Verification'} • 
+                              Inquiry: {verification.persona_inquiry_id.slice(0, 12)}...
                             </p>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-3">
+                          {getStatusBadge(verification.verification_status)}
                           <p className="text-sm text-muted-foreground">
-                            {new Date(doc.created_at).toLocaleDateString()}
+                            {new Date(verification.initiated_at).toLocaleDateString()}
                           </p>
-                          <Button size="sm" variant="outline">Review</Button>
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => openPersonaDashboard(verification.persona_inquiry_id)}
+                          >
+                            <ExternalLink className="h-4 w-4 mr-1" />
+                            Review on Persona
+                          </Button>
                         </div>
                       </div>
                     ))}
                   </div>
                 )}
+              </CardContent>
+            </Card>
+
+            {/* Compliance Info */}
+            <Card className="border-blue-200 bg-blue-50/50">
+              <CardContent className="pt-4">
+                <div className="flex items-start gap-3">
+                  <Shield className="h-5 w-5 text-blue-600 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-blue-800">Verification Review Process</p>
+                    <ul className="text-sm text-blue-700 mt-2 space-y-1 list-disc list-inside">
+                      <li>Click "Review on Persona" to view verification details in Persona's secure dashboard</li>
+                      <li>Approve or decline verifications directly in Persona</li>
+                      <li>Webhook updates will automatically sync status to Veridian</li>
+                      <li>No ID documents are stored or displayed in Veridian's system</li>
+                    </ul>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </TabsContent>

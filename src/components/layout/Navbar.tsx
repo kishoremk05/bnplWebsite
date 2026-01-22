@@ -30,15 +30,28 @@ export function Navbar() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('/#')) {
       e.preventDefault();
-      const hash = href.substring(1); // Remove the leading '/'
+      const sectionId = href.substring(2); // Remove '/#' to get the section ID
       
       if (location.pathname !== '/') {
-        // Navigate to home page with hash
-        navigate(hash);
+        // Navigate to home page first, then scroll after navigation
+        navigate('/');
+        // Use setTimeout to wait for navigation to complete
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
       } else {
         // Already on home page, just scroll
-        const id = hash.replace('#', '');
-        const element = document.getElementById(id);
+        const element = document.getElementById(sectionId);
         if (element) {
           const headerOffset = 80;
           const elementPosition = element.getBoundingClientRect().top;
@@ -49,8 +62,6 @@ export function Navbar() {
             behavior: 'smooth'
           });
         }
-        // Update URL hash
-        window.history.pushState(null, '', hash);
       }
       setIsOpen(false);
     }
