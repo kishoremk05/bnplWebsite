@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { ShoppingBag, Plane, Receipt, Store } from "lucide-react";
+import { Store } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -8,41 +8,41 @@ const smoothEasing = [0.16, 1, 0.3, 1] as const;
 
 const categories = [
   { 
-    id: "bills", 
-    label: "Bills", 
-    icon: Receipt,
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1000&q=90",
-    amount: "$90.00",
-    description: "Service upgrade",
-  },
-  { 
-    id: "travel", 
-    label: "Travel", 
-    icon: Plane,
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1000&q=90",
-    amount: "$450.00",
-    description: "Weekend getaway",
-  },
-  { 
-    id: "groceries", 
-    label: "Groceries", 
-    icon: ShoppingBag,
-    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=1000&q=90",
-    amount: "$120.00",
-    description: "Weekly shopping",
-  },
-  { 
-    id: "shopping", 
-    label: "Shopping", 
+    id: "1634-funk", 
+    label: "1634 Funk", 
     icon: Store,
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1000&q=90",
+    image: "/images/1634 FUNK.jpg",
+    amount: "$450.00",
+    description: "Premium cannabis",
+  },
+  { 
+    id: "baby-buds", 
+    label: "Baby Buds", 
+    icon: Store,
+    image: "/images/BABY BUDS.jpg",
     amount: "$280.00",
-    description: "New wardrobe",
+    description: "Quality products",
+  },
+  { 
+    id: "emerald-passage", 
+    label: "Emerald Passage", 
+    icon: Store,
+    image: "/images/EMEERALD PASSAGE.jpg",
+    amount: "$350.00",
+    description: "Trusted dispensary",
+  },
+  { 
+    id: "juniper-ash", 
+    label: "Juniper & Ash", 
+    icon: Store,
+    image: "/images/JUNIPER & ASH.jpg",
+    amount: "$320.00",
+    description: "Local favorite",
   },
 ];
 
 export function HowCustomersPay() {
-  const [activeTab, setActiveTab] = useState("bills");
+  const [activeTab, setActiveTab] = useState("1634-funk");
   const sectionRef = useRef<HTMLDivElement>(null);
   
   const { scrollYProgress } = useScroll({
