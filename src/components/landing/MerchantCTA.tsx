@@ -94,7 +94,7 @@ export function MerchantCTA() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.2, ease: smoothEasing }}
               >
-                Grow your customers, boost your sales, and drive customer preference when you offer the convenience of paying over time.
+                Grow your customers and Boost your sales and drive customer preference when you offer the convenience of paying over time.
               </motion.p>
 
               {/* Premium stats */}
@@ -106,9 +106,9 @@ export function MerchantCTA() {
                 className="grid grid-cols-3 gap-6 mb-10"
               >
                 {[
-                  { value: "2.5x", label: "Higher conversion" },
-                  { value: "40%", label: "Larger baskets" },
-                  { value: "85%", label: "Customer return" },
+                  { value: "Up to 1.3x", label: "Higher conversion" },
+                  { value: "Up to 25%", label: "Larger baskets" },
+                  { value: "Up to 30%", label: "Higher repeat purchases" },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
                     <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>

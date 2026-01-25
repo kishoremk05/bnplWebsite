@@ -12,7 +12,7 @@ const categories = [
     label: "1634 Funk", 
     icon: Store,
     image: "/images/1634 FUNK.jpg",
-    amount: "$450.00",
+    amount: "$200.00",
     description: "Premium cannabis",
   },
   { 
@@ -20,7 +20,7 @@ const categories = [
     label: "Baby Buds", 
     icon: Store,
     image: "/images/BABY BUDS.jpg",
-    amount: "$280.00",
+    amount: "$180.00",
     description: "Quality products",
   },
   { 
@@ -28,7 +28,7 @@ const categories = [
     label: "Emerald Passage", 
     icon: Store,
     image: "/images/EMEERALD PASSAGE.jpg",
-    amount: "$350.00",
+    amount: "$150.00",
     description: "Trusted dispensary",
   },
   { 
@@ -36,7 +36,7 @@ const categories = [
     label: "Juniper & Ash", 
     icon: Store,
     image: "/images/JUNIPER & ASH.jpg",
-    amount: "$320.00",
+    amount: "$120.00",
     description: "Local favorite",
   },
 ];

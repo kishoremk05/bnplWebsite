@@ -11,23 +11,23 @@ const Merchants = () => {
   const benefits = [
     {
       icon: TrendingUp,
-      title: "2.5x Higher Conversion",
+      title: "Up to 1.3x Higher Conversion",
       description: "Customers are more likely to complete purchases when flexible payment options are available.",
-      stat: "+150%",
+      stat: "Up to 1.3x",
       color: "from-emerald-500 to-emerald-600"
     },
     {
       icon: BarChart3,
-      title: "40% Larger Baskets",
+      title: "Up to 25% Larger Baskets",
       description: "Shoppers spend more when they can split payments into manageable installments.",
-      stat: "+40%",
+      stat: "Up to 25%",
       color: "from-amber-500 to-amber-600"
     },
     {
       icon: Users,
-      title: "85% Customer Return",
+      title: "Up to 30% Higher Repeat Purchases",
       description: "Build loyalty with customers who appreciate flexible payment options.",
-      stat: "85%",
+      stat: "Up to 30%",
       color: "from-emerald-600 to-teal-600"
     }
   ];
