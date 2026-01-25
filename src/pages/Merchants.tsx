@@ -92,7 +92,7 @@ const Merchants = () => {
                   <div className="space-y-6">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground font-medium">Monthly Revenue</span>
-                      <span className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">+156%</span>
+                      <span className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">+30%</span>
                     </div>
                     <div className="h-48 bg-gradient-to-t from-emerald-100 to-amber-50/30 rounded-xl flex items-end justify-around p-4 gap-2">
                       {[40, 55, 70, 85, 95].map((height, i) => (
@@ -205,7 +205,7 @@ const Merchants = () => {
             <div className="space-y-8">
               {[
                 { step: "1", title: "Apply & Get Approved", description: "Complete our simple merchant application. Most merchants are approved within 24 hours." },
-                { step: "2", title: "Integrate Your Platform", description: "Choose from our API, Shopify plugin, or POS integrations. Our team will guide you through setup." },
+                { step: "2", title: "Integrate Your Platform", description: "Choose from our API or POS integrations. Our team will guide you through setup." },
                 { step: "3", title: "Start Offering Flexible Payments", description: "Your customers can now split payments into 4 interest-free installments at checkout." }
               ].map((item, index) => (
                 <motion.div
