@@ -77,15 +77,15 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-slate-400 text-sm mb-6 max-w-xs">
-              Making flexible payments simple and accessible for everyone. 
+              Making flexible payments simple and accessible. 
               Shop now, pay later with zero interest.
             </p>
             
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
-              <a href="mailto:support@veridian.com" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors text-sm">
+              <a href="mailto:support@veridiancreditsystems.com" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors text-sm">
                 <Mail className="w-4 h-4" />
-                support@veridian.com
+                support@veridiancreditsystems.com
               </a>
               <a href="tel:1-800-VERIDIAN" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors text-sm">
                 <Phone className="w-4 h-4" />

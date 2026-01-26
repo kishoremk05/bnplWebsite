@@ -13,22 +13,22 @@ const FAQ = () => {
     shoppers: [
       { q: "How does Veridian work?", a: "Veridian allows you to split your purchase into 4 equal, interest-free payments. Pay 25% at checkout, then the remaining 75% over 6 weeks." },
       { q: "Is there a credit check?", a: "We perform a soft credit check that won't affect your credit score. This helps us verify your eligibility without impacting your credit." },
-      { q: "What do I need to sign up?", a: "You'll need to be 18+, have a valid ID, a US bank account, and a debit or credit card." },
+      { q: "What do I need to sign up?", a: "You'll need to be 21 years or older, have a valid ID, a US bank account and a debit or credit card." },
       { q: "Are there any fees?", a: "No! Veridian is completely free for shoppers when you pay on time. There are no interest charges or hidden fees." },
       { q: "What happens if I miss a payment?", a: "We'll send you reminders before each payment is due. If you miss a payment, please contact us immediately to avoid any late fees." }
     ],
     merchants: [
-      { q: "How much does it cost?", a: "Pricing starts at 2.9% per transaction with no setup fees or monthly minimums. Enterprise pricing is available for high-volume merchants." },
-      { q: "How quickly can I get started?", a: "Most merchants are approved within 24 hours. Integration typically takes 1-2 days depending on your platform." },
-      { q: "Do I get paid upfront?", a: "Yes! You receive the full payment amount upfront, minus our fee. We handle collections from the customer." },
-      { q: "What if a customer doesn't pay?", a: "You're protected. We assume the risk of non-payment, so you always get paid regardless of whether the customer completes their payment plan." },
-      { q: "Can I customize the payment experience?", a: "Yes! Enterprise customers can white-label the experience and customize branding to match their store." }
+      { q: "How much does it cost?", a: "Pricing starts at 1.25% per transaction with no setup fees or monthly minimums. Veridian requires an annual licensing fee." },
+      { q: "How quickly can I get started?", a: "Once onboarding is complete, most merchants can be live within a few business days. Timing depends on system setup and internal readiness." },
+      { q: "Do I get paid upfront?", a: "Customer payments are made directly to you according to your standard payment processing and settlement timelines. Veridian provides the software that supports installment payments but does not move or hold funds." },
+      { q: "What if a customer doesn't pay?", a: "You retain control over customer risk. Veridian supports your program with verification, transaction monitoring and clear reporting, but does not assume or insure against non-payment." },
+      { q: "Can I customize the payment experience?", a: "Merchants can tailor supported aspects of the payment experience, including branding and payment rules, based on their selected plan and technical setup." }
     ],
     security: [
-      { q: "Is my data safe?", a: "Absolutely. We use bank-level encryption and work with industry-leading partners (Persona, Experian, Plaid) to protect your information." },
-      { q: "What data does Veridian store?", a: "We only store verification results and transaction logs. Sensitive data like ID images, credit reports, and bank credentials are stored securely by our third-party partners." },
-      { q: "How is my identity verified?", a: "We use Persona for identity verification. They securely store your ID images and personal information - we only receive a pass/fail result." },
-      { q: "Can I delete my account?", a: "Yes. You can request account deletion at any time by contacting our support team at privacy@veridian.com." }
+      { q: "Is my data safe?", a: "Veridian follows industry standard security practices and partners with established verification and banking data providers to safeguard information." },
+      { q: "What data does Veridian store?", a: "Veridian stores verification results and transaction logs only. Sensitive identity, credit and banking data is handled by third party providers." },
+      { q: "How is my identity verified?", a: "Identity verification is handled by Persona. Veridian receives verification results only." },
+      { q: "Can I delete my account?", a: "Yes. You may request account deletion at any time by contacting our support team at support@veridiancreditsystems.com. Certain information may be retained as required to comply with legal, regulatory or contractual obligations." }
     ]
   };
 
@@ -176,7 +176,7 @@ const FAQ = () => {
                 Our support team is here to help
               </p>
               <a
-                href="/contact"
+                href="mailto:support@veridiancreditsystems.com"
                 className="inline-flex items-center justify-center px-8 py-3 bg-white text-emerald-600 hover:bg-gray-100 font-semibold rounded-full transition-colors shadow-lg"
               >
                 Contact Support

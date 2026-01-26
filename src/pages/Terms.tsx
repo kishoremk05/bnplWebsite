@@ -42,7 +42,7 @@ const Terms = () => {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="prose prose-slate max-w-none">
               
-              {/* Introduction */}
+              {/* Agreement to Terms */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -50,10 +50,9 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">1. Agreement to Terms</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">AGREEMENT TO TERMS</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  By accessing or using Veridian Credit Systems ("Veridian," "we," "us," or "our"), you agree to be bound 
-                  by these Terms of Service. If you do not agree to these terms, please do not use our services.
+                  By accessing or using the Veridian Credit Systems platform, website, or related services ("Services"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, you may not access or use the Services.
                 </p>
               </motion.div>
 
@@ -65,14 +64,12 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">2. Service Description</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">SERVICE DESCRIPTION</h2>
                 <p className="text-muted-foreground mb-4">
-                  Veridian provides a software platform that enables merchants to offer installment payment options to 
-                  their customers. <strong>Veridian does not extend credit, underwrite consumers, or act as a lender.</strong>
+                  Veridian Credit Systems ("Veridian," "we," "us," or "our") provides a software platform that enables merchants to offer installment payment options to their customers using merchant-controlled funds.
                 </p>
                 <p className="text-muted-foreground">
-                  Merchants use their own capital to fund installment plans. Veridian facilitates the verification, 
-                  approval, and management of these payment arrangements.
+                  <strong>Veridian does not extend credit, issue loans, underwrite consumers, determine creditworthiness or act as a lender, bank or payment processor.</strong> Merchants retain full control over funding, eligibility criteria and customer payment terms.
                 </p>
               </motion.div>
 
@@ -84,16 +81,19 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">3. Eligibility</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">ELIGIBILITY</h2>
                 <p className="text-muted-foreground mb-4">
-                  To use our services, you must:
+                  To use the Services, you must:
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                  <li>Be at least 18 years of age</li>
-                  <li>Have the legal capacity to enter into binding contracts</li>
+                <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
+                  <li>Be at least 21 years of age</li>
+                  <li>Have the legal capacity to enter into binding agreements</li>
                   <li>Provide accurate and complete information</li>
-                  <li>Comply with all applicable laws and regulations</li>
+                  <li>Comply with all applicable laws, regulations and merchant policies</li>
                 </ul>
+                <p className="text-muted-foreground">
+                  Use of the Services may be subject to additional merchant terms.
+                </p>
               </motion.div>
 
               {/* User Accounts */}
@@ -104,16 +104,19 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">4. User Accounts</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">USER ACCOUNTS</h2>
                 <p className="text-muted-foreground mb-4">
                   You are responsible for:
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                  <li>Maintaining the confidentiality of your account credentials</li>
-                  <li>All activities that occur under your account</li>
-                  <li>Notifying us immediately of any unauthorized access</li>
-                  <li>Ensuring your account information remains accurate and up-to-date</li>
+                <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
+                  <li>Maintaining the confidentiality of account credentials</li>
+                  <li>All activity conducted through your account</li>
+                  <li>Promptly notifying Veridian Credit Systems of unauthorized access</li>
+                  <li>Ensuring information associated with your account remains accurate</li>
                 </ul>
+                <p className="text-muted-foreground">
+                  Veridian may suspend or terminate access if account security is compromised.
+                </p>
               </motion.div>
 
               {/* Payment Terms */}
@@ -124,24 +127,29 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">5. Payment Terms</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">PAYMENT TERMS</h2>
+                
                 <h3 className="font-bold text-lg mb-3">For Customers</h3>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
-                  <li>Payment plans are subject to merchant approval</li>
-                  <li>You agree to make payments according to the agreed schedule</li>
-                  <li>Late or missed payments may result in fees or account restrictions</li>
-                  <li>You authorize automatic payments from your designated payment method</li>
+                  <li>Installment plans are offered and approved by merchants</li>
+                  <li>Payment schedules and terms are set by merchants</li>
+                  <li>You agree to make payments as scheduled</li>
+                  <li>Failure to complete payments may result in merchant-imposed restrictions</li>
+                  <li>Veridian does not collect interest and does not report to credit bureaus</li>
                 </ul>
 
                 <h3 className="font-bold text-lg mb-3">For Merchants</h3>
-                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
                   <li>Merchants fund installment plans using their own capital</li>
-                  <li>Platform fees apply as outlined in your merchant agreement</li>
-                  <li>Merchants are responsible for customer service and dispute resolution</li>
+                  <li>Platform fees are governed by a separate merchant agreement</li>
+                  <li>Merchants are responsible for customer service, refunds and disputes</li>
                 </ul>
+                <p className="text-muted-foreground">
+                  <strong>Veridian does not hold, move, or settle customer funds.</strong>
+                </p>
               </motion.div>
 
-              {/* Verification & Third Parties */}
+              {/* Verification and Eligibility Services */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -149,22 +157,19 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">6. Verification Services</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">VERIFICATION AND ELIGIBILITY SERVICES</h2>
                 <p className="text-muted-foreground mb-4">
-                  We use third-party providers to verify identity, creditworthiness, and bank account information:
+                  To support fraud prevention and transaction eligibility, Veridian may integrate with third-party providers, including identity verification, soft credit presence checks and bank account verification services.
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                  <li><strong>Persona:</strong> Identity verification and KYC</li>
-                  <li><strong>Experian:</strong> Credit checks (soft pull)</li>
-                  <li><strong>Plaid:</strong> Bank account verification</li>
-                </ul>
-                <p className="text-muted-foreground mt-4">
-                  By using our services, you authorize us to share necessary information with these providers and 
-                  consent to their processing of your data according to their respective privacy policies.
+                <p className="text-muted-foreground mb-4">
+                  By using the Services, you authorize Veridian to share necessary information with these providers and acknowledge that their processing of data is governed by their respective privacy policies.
+                </p>
+                <p className="text-muted-foreground">
+                  <strong>Veridian receives verification outcomes and eligibility signals only and does not store bank login credentials, full credit reports or government identification images.</strong>
                 </p>
               </motion.div>
 
-              {/* Prohibited Activities */}
+              {/* Prohibited Use */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -172,18 +177,21 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">7. Prohibited Activities</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">PROHIBITED USE</h2>
                 <p className="text-muted-foreground mb-4">
                   You may not:
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
                   <li>Provide false or misleading information</li>
-                  <li>Use the service for fraudulent or illegal purposes</li>
-                  <li>Attempt to circumvent security measures</li>
-                  <li>Interfere with the proper functioning of the platform</li>
-                  <li>Use automated systems to access the service without authorization</li>
-                  <li>Violate any applicable laws or regulations</li>
+                  <li>Use the Services for unlawful or fraudulent purposes</li>
+                  <li>Attempt to bypass security controls</li>
+                  <li>Interfere with system integrity or availability</li>
+                  <li>Use automated tools without authorization</li>
+                  <li>Violate applicable laws or regulations</li>
                 </ul>
+                <p className="text-muted-foreground">
+                  Veridian may suspend or terminate access for violations.
+                </p>
               </motion.div>
 
               {/* Intellectual Property */}
@@ -194,11 +202,9 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">8. Intellectual Property</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">INTELLECTUAL PROPERTY</h2>
                 <p className="text-muted-foreground">
-                  All content, features, and functionality of the Veridian platform are owned by Veridian Credit Systems 
-                  and are protected by copyright, trademark, and other intellectual property laws. You may not copy, 
-                  modify, distribute, or create derivative works without our express written permission.
+                  All software, content and materials provided through the Services are owned by Veridian Credit Systems or its licensors and are protected by intellectual property laws. No rights are granted except as expressly stated. Unauthorized use is prohibited.
                 </p>
               </motion.div>
 
@@ -210,14 +216,12 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">9. Disclaimers</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">DISCLAIMERS</h2>
                 <p className="text-muted-foreground mb-4">
-                  THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR 
-                  IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, 
-                  OR NON-INFRINGEMENT.
+                  THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE." VERIDIAN DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
                 </p>
                 <p className="text-muted-foreground">
-                  We do not guarantee that the service will be uninterrupted, secure, or error-free.
+                  Veridian does not guarantee uninterrupted availability or error-free operation.
                 </p>
               </motion.div>
 
@@ -229,11 +233,12 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">10. Limitation of Liability</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">LIMITATION OF LIABILITY</h2>
+                <p className="text-muted-foreground mb-4">
+                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, VERIDIAN SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL OR PUNITIVE DAMAGES, INCLUDING LOST PROFITS OR DATA, ARISING FROM OR RELATED TO USE OF THE SERVICES.
+                </p>
                 <p className="text-muted-foreground">
-                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, VERIDIAN SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, 
-                  SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED 
-                  DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
+                  Veridian's total liability shall not exceed amounts paid to Veridian in the preceding twelve months.
                 </p>
               </motion.div>
 
@@ -245,13 +250,9 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">11. Dispute Resolution</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">DISPUTE RESOLUTION</h2>
                 <p className="text-muted-foreground mb-4">
-                  Any disputes arising from these Terms or your use of the service shall be resolved through binding 
-                  arbitration in accordance with the rules of the American Arbitration Association.
-                </p>
-                <p className="text-muted-foreground">
-                  You waive your right to participate in class action lawsuits or class-wide arbitration.
+                  Any dispute arising from these Terms or the Services shall be resolved through binding arbitration administered by the American Arbitration Association. Arbitration shall be conducted on an individual basis. Class actions and class arbitration are waived to the extent permitted by law.
                 </p>
               </motion.div>
 
@@ -263,15 +264,13 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">12. Changes to Terms</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">CHANGES TO TERMS</h2>
                 <p className="text-muted-foreground">
-                  We reserve the right to modify these Terms at any time. We will notify you of material changes by 
-                  posting the updated Terms on our website. Your continued use of the service after such changes 
-                  constitutes acceptance of the new Terms.
+                  Veridian may update these Terms from time to time. Material changes will be posted on our website. Continued use of the Services after changes constitutes acceptance of the revised Terms.
                 </p>
               </motion.div>
 
-              {/* Contact */}
+              {/* Contact Information */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -279,13 +278,13 @@ const Terms = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="bg-slate-50 rounded-2xl p-8"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">13. Contact Information</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">CONTACT INFORMATION</h2>
                 <p className="text-muted-foreground mb-4">
-                  If you have questions about these Terms of Service, please contact us:
+                  Questions regarding these Terms may be directed to:
                 </p>
                 <div className="space-y-2 text-muted-foreground">
-                  <p><strong>Email:</strong> legal@veridian.com</p>
-                  <p><strong>Address:</strong> [Company Address]</p>
+                  <p><strong>support@veridiancreditsystems.com</strong></p>
+                  <p>Veridian Credit Systems</p>
                 </div>
               </motion.div>
 

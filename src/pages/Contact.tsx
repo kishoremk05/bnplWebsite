@@ -69,8 +69,8 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Email</h3>
-                        <a href="mailto:support@veridian.com" className="text-muted-foreground hover:text-emerald-600 transition-colors">
-                          support@veridian.com
+                        <a href="mailto:support@veridiancreditsystems.com" className="text-muted-foreground hover:text-emerald-600 transition-colors">
+                          support@veridiancreditsystems.com
                         </a>
                       </div>
                     </div>
@@ -108,8 +108,8 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground mb-3">
                     For partnership or media inquiries:
                   </p>
-                  <a href="mailto:business@veridian.com" className="text-emerald-600 hover:text-emerald-700 font-medium">
-                    business@veridian.com
+                  <a href="mailto:business@veridiancreditsystems.com" className="text-emerald-600 hover:text-emerald-700 font-medium">
+                    business@veridiancreditsystems.com
                   </a>
                 </div>
               </motion.div>
@@ -160,15 +160,21 @@ const Contact = () => {
                       <label htmlFor="subject" className="block text-sm font-medium mb-2">
                         Subject *
                       </label>
-                      <input
-                        type="text"
+                      <select
                         id="subject"
                         required
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                         className="w-full px-4 py-3 bg-white border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                        placeholder="How can we help?"
-                      />
+                      >
+                        <option value="">Select a subject...</option>
+                        <option value="media-inquiries">Media Inquiries</option>
+                        <option value="close-account">Close My Account</option>
+                        <option value="pilot-program">Pilot Program</option>
+                        <option value="merchant-support">Merchant Support</option>
+                        <option value="sales">Sales</option>
+                        <option value="other">Other</option>
+                      </select>
                     </div>
 
                     <div>

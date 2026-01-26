@@ -41,7 +41,7 @@ const About = () => {
                 About <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-amber-600 bg-clip-text text-transparent">Veridian Credit Systems</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Making flexible payments accessible for everyone, everywhere
+                Payment flexibility, built for regulated retail
               </p>
             </motion.div>
           </div>
@@ -59,9 +59,9 @@ const About = () => {
               <h2 className="font-display text-3xl font-bold mb-6 text-center">Our Mission</h2>
               <div className="bg-gradient-to-br from-emerald-50/50 to-amber-50/30 rounded-2xl p-8 border border-emerald-100">
                 <p className="text-lg text-muted-foreground leading-relaxed text-center">
-                  Veridian Credit Systems empowers merchants to offer flexible payment options that drive growth 
-                  and customer satisfaction. We provide the technology platform that makes Buy Now, Pay Later 
-                  accessible, secure, and transparent for businesses of all sizes.
+                  Veridian Credit Systems empowers merchants in regulated industries to offer flexible installment 
+                  payments with clarity and control. We deliver software that supports responsible payment options 
+                  while keeping funding, risk and compliance in the hands of the merchant.
                 </p>
               </div>
             </motion.div>
@@ -97,11 +97,11 @@ const About = () => {
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Veridian Credit Systems provides software that enables merchants to offer installment payment 
-                  options using their own capital. <strong>We do not extend credit, underwrite consumers, or act as a lender.</strong>
+                  options using their own capital. <strong>We do not extend credit, underwrite consumers or act as a lender.</strong>
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Instead, we provide the technology infrastructure that allows merchants to manage payment plans, 
-                  verify customer eligibility, and process transactions seamlessly.
+                  verify customer eligibility and process transactions seamlessly.
                 </p>
               </motion.div>
 

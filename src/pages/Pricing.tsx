@@ -20,10 +20,10 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: "Starter",
+      name: "Single Store",
       price: "1.25",
       period: "per transaction",
-      description: "Perfect for small businesses getting started",
+      description: "Perfect for single dispensary locations",
       features: [
         "Up to $50K monthly volume",
         "Standard verification",
@@ -36,10 +36,10 @@ const Pricing = () => {
       popular: false
     },
     {
-      name: "Growth",
+      name: "Multiple Stores in One State",
       price: "1.25",
       period: "per transaction",
-      description: "For growing businesses with higher volume",
+      description: "For dispensaries operating in one state",
       features: [
         "Up to $250K monthly volume",
         "Priority verification",
@@ -51,13 +51,13 @@ const Pricing = () => {
         "Dedicated account manager"
       ],
       cta: "Get Started",
-      popular: true
+      popular: false
     },
     {
-      name: "Enterprise",
+      name: "Multi State Operator",
       price: "1.25",
       period: "per transaction",
-      description: "Tailored solutions for large businesses",
+      description: "For multi-state dispensary operations",
       features: [
         "Unlimited monthly volume",
         "White-label platform",
@@ -75,8 +75,8 @@ const Pricing = () => {
 
   const features = [
     { icon: Zap, title: "Instant Approval", description: "Get approved in minutes, not days" },
-    { icon: Shield, title: "Zero Risk", description: "We handle fraud prevention & chargebacks" },
-    { icon: TrendingUp, title: "Grow Revenue", description: "Increase sales by 40% on average" }
+    { icon: Shield, title: "Built-in safeguards", description: "identity verification, fraud prevention and transaction monitoring" },
+    { icon: TrendingUp, title: "Grow Revenue", description: "Increase sales by 30% on average" }
   ];
 
   return (
@@ -249,19 +249,19 @@ const Pricing = () => {
               {[
                 {
                   q: "Are there any setup fees or monthly minimums?",
-                  a: "No! There are zero setup fees and no monthly minimums. You only pay when you process transactions."
+                  a: "There are no setup fees. During the pilot, Veridian offers a discounted pilot license. Standard annual licensing applies after the pilot."
                 },
                 {
                   q: "When do I receive my funds?",
-                  a: "Funds are typically settled to your account within 2-3 business days. Growth and Enterprise plans get same-day settlement."
+                  a: "You receive customer payments directly. Funds flow according to your existing payment setup and timing. Veridian does not hold, move or settle funds."
                 },
                 {
-                  q: "What if a customer doesn't complete their payments?",
-                  a: "You receive the full payment upfront minus our fee. We handle collections and assume the risk of non-payment."
+                  q: "What if a customer does not complete their payments?",
+                  a: "You control the funding and the risk. Veridian provides eligibility tools, monitoring and audit logs."
                 },
                 {
                   q: "Can I switch plans later?",
-                  a: "Absolutely! You can upgrade or downgrade your plan at any time based on your business needs."
+                  a: "Yes. You can upgrade or change plans as your business needs evolve. Changes take effect at the start of the next billing period."
                 }
               ].map((faq, index) => (
                 <motion.div
@@ -304,9 +304,6 @@ const Pricing = () => {
                 Join thousands of merchants offering flexible payments with Veridian
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Button asChild size="lg" className="rounded-full px-8 bg-white text-emerald-600 hover:bg-gray-100 font-bold">
-                  <Link to="/register">Start Free Trial</Link>
-                </Button>
                 <Button asChild size="lg" variant="outline" className="rounded-full px-8 border-2 border-white text-white hover:bg-white/10 font-bold">
                   <Link to="/contact">Talk to Sales</Link>
                 </Button>

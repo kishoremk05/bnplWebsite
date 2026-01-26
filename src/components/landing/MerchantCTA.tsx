@@ -31,7 +31,7 @@ export function MerchantCTA() {
           {/* Premium Background Image */}
           <div className="absolute inset-0">
             <motion.img 
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=90"
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=90"
               alt="Boost your business"
               className="w-full h-full object-cover"
               style={{ scale: useTransform(scrollYProgress, [0, 1], [1.1, 1]) }}
@@ -64,6 +64,21 @@ export function MerchantCTA() {
 
           {/* Premium Content */}
           <div className="relative z-10 flex items-center min-h-[600px] p-12 sm:p-16 lg:p-20">
+            {/* Logo - Top Right Corner */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: smoothEasing }}
+              className="absolute top-8 right-8"
+            >
+              <img 
+                src="/VeridianCreditSystemsLogo.jpg" 
+                alt="Veridian Credit Systems" 
+                className="h-12 w-12 rounded-lg object-cover shadow-lg ring-2 ring-white/30 backdrop-blur-sm"
+              />
+            </motion.div>
+
             <div className="max-w-2xl">
               {/* Badge */}
               <motion.div

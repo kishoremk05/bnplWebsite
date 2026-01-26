@@ -34,7 +34,7 @@ const Merchants = () => {
 
   const features = [
     { icon: Zap, title: "Instant Integration", description: "Get started in minutes with our simple API or POS integrations" },
-    { icon: Shield, title: "Risk-Free for You", description: "We handle verification and fraud prevention using industry-leading partners" },
+    { icon: Shield, title: "Built-in safeguards", description: "identity verification, fraud prevention and transaction monitoring" },
     { icon: CreditCard, title: "Your Capital, Your Control", description: "Fund installment plans with your own capital and maintain full control" }
   ];
 

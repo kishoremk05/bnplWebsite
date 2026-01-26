@@ -50,30 +50,23 @@ const Privacy = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">Introduction</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">INTRODUCTION</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Veridian Credit Systems ("Veridian," "we," "us," or "our") is committed to protecting your privacy. 
-                  This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you 
-                  use our platform and services.
+                  Veridian Credit Systems ("Veridian," "we," "us," or "our") provides software that enables merchants to offer installment payment options using their own capital. We are committed to protecting your privacy and handling information responsibly. This Privacy Policy explains how we collect, use, disclose and safeguard information when you access or use our website, platform and related services.
                 </p>
               </motion.div>
 
-              {/* Data Handling Disclosure */}
+              {/* Scope */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: smoothEasing }}
-                className="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-xl mb-12"
+                className="mb-12"
               >
-                <h3 className="font-display text-xl font-bold mb-3 flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-emerald-600" />
-                  Our Data Commitment
-                </h3>
+                <h2 className="font-display text-2xl font-bold mb-4">SCOPE</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Veridian retains only the minimum data required to operate the platform, including verification 
-                  results, eligibility signals, and transaction logs. Sensitive identity, banking, and credit data 
-                  are processed and stored by third-party providers.
+                  This Privacy Policy applies to information collected through our website, merchant platform and related services. It does not apply to information collected directly by merchants, payment processors or third-party service providers that operate independently from Veridian.
                 </p>
               </motion.div>
 
@@ -85,62 +78,35 @@ const Privacy = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">Information We Collect</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">INFORMATION WE COLLECT</h2>
                 
-                <h3 className="font-bold text-lg mb-3">1. Information You Provide</h3>
+                <h3 className="font-bold text-lg mb-3">Information you provide directly</h3>
+                <p className="text-muted-foreground mb-3">We may collect information that you choose to provide, including:</p>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
-                  <li>Account information (name, email address, phone number)</li>
-                  <li>Transaction details and payment history</li>
-                  <li>Communication preferences</li>
+                  <li>Name</li>
+                  <li>Email address</li>
+                  <li>Phone number</li>
+                  <li>Business information</li>
+                  <li>Communications submitted through forms or support requests</li>
                 </ul>
 
-                <h3 className="font-bold text-lg mb-3">2. Information from Third Parties</h3>
-                <p className="text-muted-foreground mb-4">
-                  We work with trusted third-party providers who handle sensitive data on our behalf:
+                <h3 className="font-bold text-lg mb-3">Information collected through platform use</h3>
+                <p className="text-muted-foreground mb-3">When our software is used as part of a transaction, we may collect:</p>
+                <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
+                  <li>Transaction identifiers</li>
+                  <li>Merchant identifiers</li>
+                  <li>Eligibility decision outcomes</li>
+                  <li>Timestamps and audit logs</li>
+                  <li>Repayment status indicators</li>
+                </ul>
+                <p className="text-muted-foreground mb-6">
+                  <strong>We do not collect or store</strong> full payment card numbers, bank login credentials, government ID images or full credit reports.
                 </p>
-                <div className="space-y-4 mb-6">
-                  <div className="bg-white border border-gray-200 rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <Eye className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-bold mb-1">Persona (Identity Verification)</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Handles identity verification, KYC processes, and stores ID images and government ID numbers.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white border border-gray-200 rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <Database className="w-5 h-5 text-purple-600 mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-bold mb-1">Experian (Credit Checks)</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Performs soft credit checks and stores credit reports and scores.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white border border-gray-200 rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <Shield className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-bold mb-1">Plaid (Bank Verification)</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Verifies bank accounts and stores bank credentials and transaction histories.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <h3 className="font-bold text-lg mb-3">3. Automatically Collected Information</h3>
-                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                  <li>Device information and IP address</li>
-                  <li>Browser type and version</li>
-                  <li>Usage data and analytics</li>
-                  <li>Cookies and similar technologies</li>
-                </ul>
+                <h3 className="font-bold text-lg mb-3">Information processed by third-party providers</h3>
+                <p className="text-muted-foreground">
+                  Certain verification and eligibility services are performed by trusted third-party providers. These providers may collect and process sensitive information directly, including identity data, banking data or credit-related signals. Veridian receives only tokenized references, verification outcomes or high-level eligibility indicators.
+                </p>
               </motion.div>
 
               {/* How We Use Information */}
@@ -151,19 +117,22 @@ const Privacy = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">How We Use Your Information</h2>
-                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                  <li>To provide and maintain our services</li>
-                  <li>To process transactions and manage payment plans</li>
-                  <li>To verify eligibility for installment payments</li>
-                  <li>To communicate with you about your account</li>
-                  <li>To improve our platform and user experience</li>
-                  <li>To comply with legal obligations</li>
-                  <li>To prevent fraud and ensure security</li>
+                <h2 className="font-display text-2xl font-bold mb-4">HOW WE USE INFORMATION</h2>
+                <p className="text-muted-foreground mb-3">We use information to:</p>
+                <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
+                  <li>Operate and maintain our platform</li>
+                  <li>Support merchant transaction workflows</li>
+                  <li>Provide eligibility and fraud prevention tools</li>
+                  <li>Maintain audit logs and compliance records</li>
+                  <li>Respond to inquiries and support requests</li>
+                  <li>Improve platform performance and security</li>
                 </ul>
+                <p className="text-muted-foreground">
+                  <strong>We do not use personal information to make lending decisions, extend credit or market consumer financial products.</strong>
+                </p>
               </motion.div>
 
-              {/* Data Sharing */}
+              {/* How We Share Information */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -171,18 +140,16 @@ const Privacy = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">How We Share Information</h2>
-                <p className="text-muted-foreground mb-4">
-                  We may share your information with:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                  <li><strong>Merchants:</strong> To facilitate transactions and payment plans</li>
-                  <li><strong>Service Providers:</strong> Persona, Experian, and Plaid for verification services</li>
-                  <li><strong>Legal Authorities:</strong> When required by law or to protect our rights</li>
-                  <li><strong>Business Transfers:</strong> In connection with mergers, acquisitions, or asset sales</li>
+                <h2 className="font-display text-2xl font-bold mb-4">HOW WE SHARE INFORMATION</h2>
+                <p className="text-muted-foreground mb-3">We may share information:</p>
+                <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
+                  <li>With service providers that support our platform operations</li>
+                  <li>With merchants in connection with transactions initiated through their systems</li>
+                  <li>As required by law, regulation or legal process</li>
+                  <li>To protect the rights, safety or integrity of Veridian and its users</li>
                 </ul>
-                <p className="text-muted-foreground mt-4">
-                  We do not sell your personal information to third parties.
+                <p className="text-muted-foreground">
+                  <strong>We do not sell personal information.</strong>
                 </p>
               </motion.div>
 
@@ -194,15 +161,13 @@ const Privacy = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">Data Retention</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">DATA RETENTION</h2>
                 <p className="text-muted-foreground">
-                  We retain your information only as long as necessary to provide our services and comply with legal 
-                  obligations. Verification results and transaction logs are retained for regulatory compliance purposes. 
-                  Sensitive data stored by third-party providers is subject to their respective retention policies.
+                  We retain information only for as long as necessary to operate the platform, meet contractual obligations and comply with legal or regulatory requirements. Eligibility logs and transaction records may be retained for audit and compliance purposes.
                 </p>
               </motion.div>
 
-              {/* Your Rights */}
+              {/* Data Security */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -210,20 +175,13 @@ const Privacy = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">Your Privacy Rights</h2>
-                <p className="text-muted-foreground mb-4">
-                  Depending on your location, you may have the following rights:
+                <h2 className="font-display text-2xl font-bold mb-4">DATA SECURITY</h2>
+                <p className="text-muted-foreground">
+                  We implement administrative, technical and organizational safeguards designed to protect information from unauthorized access, use or disclosure. While no system can guarantee absolute security, we take reasonable measures appropriate to the nature of our services.
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                  <li><strong>Access:</strong> Request a copy of your personal information</li>
-                  <li><strong>Correction:</strong> Request correction of inaccurate information</li>
-                  <li><strong>Deletion:</strong> Request deletion of your personal information</li>
-                  <li><strong>Opt-Out:</strong> Opt out of marketing communications</li>
-                  <li><strong>Data Portability:</strong> Request transfer of your data</li>
-                </ul>
               </motion.div>
 
-              {/* Security */}
+              {/* Your Choices */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -231,11 +189,51 @@ const Privacy = () => {
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
               >
-                <h2 className="font-display text-2xl font-bold mb-4">Security</h2>
+                <h2 className="font-display text-2xl font-bold mb-4">YOUR CHOICES</h2>
                 <p className="text-muted-foreground">
-                  We implement appropriate technical and organizational measures to protect your information against 
-                  unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over 
-                  the internet or electronic storage is 100% secure.
+                  You may contact us to request access to, correction of or deletion of certain information, subject to applicable legal and contractual limitations.
+                </p>
+              </motion.div>
+
+              {/* Children's Privacy */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: smoothEasing }}
+                className="mb-12"
+              >
+                <h2 className="font-display text-2xl font-bold mb-4">CHILDREN'S PRIVACY</h2>
+                <p className="text-muted-foreground">
+                  Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from minors.
+                </p>
+              </motion.div>
+
+              {/* Third-Party Services */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: smoothEasing }}
+                className="mb-12"
+              >
+                <h2 className="font-display text-2xl font-bold mb-4">THIRD-PARTY SERVICES</h2>
+                <p className="text-muted-foreground">
+                  Our platform may integrate with or link to third-party services. This Privacy Policy does not govern the privacy practices of those third parties. We encourage you to review their privacy policies directly.
+                </p>
+              </motion.div>
+
+              {/* Changes to Policy */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: smoothEasing }}
+                className="mb-12"
+              >
+                <h2 className="font-display text-2xl font-bold mb-4">CHANGES TO THIS POLICY</h2>
+                <p className="text-muted-foreground">
+                  We may update this Privacy Policy from time to time. Updates will be posted on our website with a revised effective date.
                 </p>
               </motion.div>
 
@@ -249,14 +247,14 @@ const Privacy = () => {
               >
                 <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
                   <Mail className="w-6 h-6 text-slate-600" />
-                  Contact Us
+                  CONTACT US
                 </h2>
                 <p className="text-muted-foreground mb-4">
-                  If you have questions about this Privacy Policy or wish to exercise your privacy rights, please contact us:
+                  If you have questions about this Privacy Policy or our data practices, contact us at:
                 </p>
                 <div className="space-y-2 text-muted-foreground">
-                  <p><strong>Email:</strong> privacy@veridian.com</p>
-                  <p><strong>Address:</strong> [Company Address]</p>
+                  <p><strong>support@veridiancreditsystems.com</strong></p>
+                  <p>Veridian Credit Systems</p>
                 </div>
               </motion.div>
 

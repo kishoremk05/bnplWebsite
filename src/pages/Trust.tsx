@@ -56,8 +56,8 @@ const Trust = () => {
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Veridian retains only the minimum data required to operate the platform, 
-                including verification results, eligibility signals, and transaction logs. 
-                Sensitive identity, banking, and credit data are processed and stored 
+                including verification results, eligibility signals and transaction logs. 
+                Sensitive identity, banking and credit data are processed and stored 
                 by third-party providers.
               </p>
             </motion.div>

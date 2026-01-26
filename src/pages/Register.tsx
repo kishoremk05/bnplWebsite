@@ -20,7 +20,6 @@ const customerBenefits = [
 
 const merchantBenefits = [
   "Increase sales by 40%",
-  "Get paid upfront",
   "Zero risk for you",
   "Easy integration",
 ];
@@ -226,10 +225,6 @@ export default function Register() {
                         Offer flexible payments and grow sales
                       </p>
                       <div className="space-y-1">
-                        <div className="flex items-center gap-2 text-xs text-amber-600">
-                          <CheckCircle2 className="w-3 h-3" />
-                          <span>Get paid upfront</span>
-                        </div>
                         <div className="flex items-center gap-2 text-xs text-amber-600">
                           <CheckCircle2 className="w-3 h-3" />
                           <span>Increase conversions</span>
