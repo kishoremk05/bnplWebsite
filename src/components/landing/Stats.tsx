@@ -7,29 +7,33 @@ const smoothEasing = [0.16, 1, 0.3, 1] as const;
 
 const stats = [
   { 
-    value: "500K+", 
-    label: "Happy Customers", 
+    value: "Real world tested", 
+    label: "Live tested inside a licensed New Jersey dispensary", 
+    description: "Built for real customers, real transactions, real compliance",
     icon: Users,
     color: "from-emerald-500 to-emerald-700",
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=90",
   },
   { 
-    value: "$10M+", 
-    label: "Transactions", 
+    value: "Revenue impact", 
+    label: "$30K to $50K average annual lift per location", 
+    description: "Driven by higher ticket sizes and recovered walk aways",
     icon: CreditCard,
     color: "from-emerald-600 to-teal-600",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=90",
   },
   { 
-    value: "<30s", 
-    label: "Approval Time", 
+    value: "Fast time to value", 
+    label: "Break even in about 4 months", 
+    description: "Most operators see impact within the first 90 days",
     icon: Clock,
     color: "from-emerald-500 to-green-600",
     image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=400&q=90",
   },
   { 
-    value: "99.1%", 
-    label: "Satisfaction Rate", 
+    value: "Owner focused ROI", 
+    label: "3x to 4.5x return in year one", 
+    description: "Designed to improve cash flow, not add complexity",
     icon: TrendingUp,
     color: "from-amber-500 to-orange-600",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=90",
@@ -89,7 +93,7 @@ export function Stats() {
             className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-emerald-100 to-amber-100 rounded-full"
           >
             <span className="text-sm font-semibold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
-              Trusted Worldwide
+              Trusted Nationwide
             </span>
           </motion.div>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground">
@@ -141,7 +145,7 @@ export function Stats() {
 
                 {/* Animated value with counter effect */}
                 <motion.div 
-                  className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-2"
+                  className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-3"
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -149,8 +153,11 @@ export function Stats() {
                 >
                   {stat.value}
                 </motion.div>
-                <div className="text-sm text-muted-foreground font-medium">
+                <div className="text-base text-foreground font-semibold mb-2">
                   {stat.label}
+                </div>
+                <div className="text-sm text-muted-foreground leading-relaxed">
+                  {stat.description}
                 </div>
 
                 {/* Premium hover glow */}
