@@ -102,17 +102,7 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-
-                <div className="bg-gradient-to-br from-emerald-50 to-amber-50/30 rounded-2xl p-6 border border-emerald-100">
-                  <h3 className="font-semibold mb-2">Business Inquiries</h3>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    For partnership or media inquiries:
-                  </p>
-                  <a href="mailto:business@veridiancreditsystems.com" className="text-emerald-600 hover:text-emerald-700 font-medium">
-                    business@veridiancreditsystems.com
-                  </a>
-                </div>
-              </motion.div>
+                </motion.div>
 
               {/* Contact Form */}
               <motion.div
@@ -168,6 +158,8 @@ const Contact = () => {
                         className="w-full px-4 py-3 bg-white border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                       >
                         <option value="">Select a subject...</option>
+                        <option value="business-inquiries">Business Inquiries</option>
+                        <option value="partnerships">Partnerships</option>
                         <option value="media-inquiries">Media Inquiries</option>
                         <option value="close-account">Close My Account</option>
                         <option value="pilot-program">Pilot Program</option>

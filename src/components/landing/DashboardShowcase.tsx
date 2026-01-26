@@ -271,46 +271,6 @@ export function DashboardShowcase() {
                   </Button>
                 </motion.div>
               </div>
-
-              {/* User avatars with higher quality images */}
-              <motion.div 
-                className="mt-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6, duration: 0.5, ease: smoothEasing }}
-              >
-                <p className="text-white/70 text-sm mb-3 drop-shadow-md">Trusted by 500+ dispensaries</p>
-                <div className="flex -space-x-3">
-                  {[
-                    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=90",
-                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=90",
-                    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=90",
-                    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=90",
-                  ].map((src, i) => (
-                    <motion.div
-                      key={i}
-                      className="w-12 h-12 rounded-full overflow-hidden border-3 border-white/30 shadow-lg"
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.7 + i * 0.08, duration: 0.3, type: "spring", stiffness: 200 }}
-                      whileHover={{ scale: 1.15, zIndex: 10 }}
-                    >
-                      <img src={src} alt="User" className="w-full h-full object-cover" loading="lazy" />
-                    </motion.div>
-                  ))}
-                  <motion.div
-                    className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border-3 border-white/30 flex items-center justify-center text-white text-sm font-semibold shadow-lg"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 1, duration: 0.3, type: "spring", stiffness: 200 }}
-                  >
-                    +99
-                  </motion.div>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </motion.div>
