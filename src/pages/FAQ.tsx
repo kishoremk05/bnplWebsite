@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { HelpCircle, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const smoothEasing = [0.16, 1, 0.3, 1] as const;
 
@@ -175,12 +176,12 @@ const FAQ = () => {
               <p className="text-xl text-white/90 mb-8">
                 Our support team is here to help
               </p>
-              <a
-                href="mailto:support@veridiancreditsystems.com"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center px-8 py-3 bg-white text-emerald-600 hover:bg-gray-100 font-semibold rounded-full transition-colors shadow-lg"
               >
                 Contact Support
-              </a>
+              </Link>
             </motion.div>
           </div>
         </section>
