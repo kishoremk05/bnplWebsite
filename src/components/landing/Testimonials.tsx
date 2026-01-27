@@ -42,7 +42,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "I use Veridian Credit Systems for all my online shopping now. It's become an essential part of my routine.",
+    quote: "I use Veridian Credit Systems regularly at checkout now. It's become a seamless part of how I manage purchases.",
     author: "David Kim",
     role: "Content Creator",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=90",

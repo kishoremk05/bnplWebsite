@@ -109,7 +109,7 @@ export function MerchantCTA() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.2, ease: smoothEasing }}
               >
-                Grow your customers and Boost your sales and drive customer preference when you offer the convenience of paying over time.
+                Grow your customers, boost your sales and drive customer preference when you offer the convenience of paying over time.
               </motion.p>
 
               {/* Premium stats */}

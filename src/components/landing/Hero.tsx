@@ -85,7 +85,6 @@ export function Hero() {
                   ))}
                 </div>
                 <span className="text-sm font-bold text-foreground">4.9 Rating</span>
-                <span className="text-xs text-muted-foreground">• 50K+ reviews</span>
               </motion.div>
 
               {/* Premium headline with gradient */}

@@ -16,7 +16,7 @@ const stats = [
   },
   { 
     value: "Revenue impact", 
-    label: "$30K to $50K average annual lift per location", 
+    label: "$30K to $87K average annual lift per location", 
     description: "Driven by higher ticket sizes and recovered walk aways",
     icon: CreditCard,
     color: "from-emerald-600 to-teal-600",
