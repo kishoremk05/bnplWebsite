@@ -14,9 +14,9 @@ const About = () => {
   ];
 
   const stats = [
-    { value: "10,000+", label: "Merchants", icon: Users },
-    { value: "$500M+", label: "Processed", icon: TrendingUp },
-    { value: "99.9%", label: "Uptime", icon: Award }
+    { value: "Early access", label: "Merchants", icon: Users },
+    { value: "Transaction activity", label: "Monitored", icon: TrendingUp },
+    { value: "Built for", label: "Reliability", icon: Award }
   ];
 
   return (
