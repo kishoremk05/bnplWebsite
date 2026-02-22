@@ -29,8 +29,8 @@ export function CTA() {
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground">
                 Ready to Boost Your Sales?
               </h2>
-              <p className="mt-4 text-lg text-primary-foreground/80 max-w-lg">
-                Join hundreds of cannabis retailers who've increased their revenue by offering flexible payment options to customers.
+               <p className="mt-4 text-lg text-primary-foreground/80 max-w-lg">
+                 Join hundreds of retailers who've increased their revenue by offering flexible payment options to customers.
               </p>
               <ul className="mt-8 space-y-3">
                 {benefits.map((benefit) => (

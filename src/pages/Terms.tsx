@@ -54,6 +54,13 @@ const Terms = () => {
                 </p>
               </motion.div>
               {/* ...existing code... */}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default Terms;
