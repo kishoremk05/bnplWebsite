@@ -41,20 +41,19 @@ const Privacy = () => {
         <section className="py-12">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="prose prose-slate max-w-none">
-              
-              {/* Introduction */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: smoothEasing }}
-                className="mb-12"
-              >
-                <h2 className="font-display text-2xl font-bold mb-4">INTRODUCTION</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Veridian Credit Systems, Inc., Veridian, we, us, or our, provides software that enables merchants to offer installment payment options using merchant-controlled funds. We are committed to protecting privacy and handling information responsibly. This Privacy Policy explains how we collect, use, disclose and safeguard information when you access or use our website, platform and related services.
-                </p>
-              </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: smoothEasing }}
+                    className="mb-12"
+                  >
+                    <h2 className="font-display text-2xl font-bold mb-4">INTRODUCTION</h2>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Veridian Credit Systems, Inc. (“Veridian,” “we,” “us,” or “our”) provides software that enables merchants to offer installment payment options using merchant-controlled funds. Veridian is a financial technology software provider and does not act as a lender, bank, payment processor or financial institution.
+                      We are committed to protecting privacy and handling information responsibly. This Privacy Policy explains how we collect, use, disclose and safeguard information when you access or use our website, platform and related services.
+                    </p>
+                  </motion.div>
 
               {/* Scope */}
               <motion.div

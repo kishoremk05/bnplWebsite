@@ -54,48 +54,43 @@ const Terms = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   By accessing or using the Veridian Credit Systems platform, website or related services, collectively the Services, you agree to be bound by these Terms of Service. If you do not agree to these Terms, you may not access or use the Services.
                 </p>
-              </motion.div>
-
-              {/* Service Description */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: smoothEasing }}
-                className="mb-12"
-              >
-                <h2 className="font-display text-2xl font-bold mb-4">SERVICE DESCRIPTION</h2>
-                <p className="text-muted-foreground mb-4">
-                  Veridian Credit Systems, Inc., Veridian, we, us, or our, provides a software platform that enables merchants to offer installment payment options to their customers using merchant-controlled funds.
-                </p>
-                <p className="text-muted-foreground">
-                  <strong>Veridian provides software only. Veridian does not extend credit, issue loans, underwrite consumers, determine creditworthiness, act as a lender, bank or payment processor, or hold, move or settle customer funds.</strong> Merchants retain full control over funding decisions, eligibility criteria, payment schedules and customer terms. All installment arrangements are established directly between the merchant and the customer.
-                </p>
-              </motion.div>
-
-              {/* Eligibility */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: smoothEasing }}
-                className="mb-12"
-              >
-                <h2 className="font-display text-2xl font-bold mb-4">ELIGIBILITY</h2>
-                <p className="text-muted-foreground mb-4">
-                  To use the Services, you must:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
-                  <li>Be at least the age of majority applicable to the merchant or transaction.</li>
-                  <li>Have the legal capacity to enter into binding agreements.</li>
-                  <li>Provide accurate and complete information.</li>
-                  <li>Comply with all applicable laws, regulations and merchant policies.</li>
-                </ul>
-                <p className="text-muted-foreground">
-                  Use of the Services may be subject to additional merchant terms.
-                </p>
-              </motion.div>
-
+              return (
+                <div className="min-h-screen bg-white">
+                  <Navbar />
+                  <main className="pt-24 pb-16">
+                    {/* Hero */}
+                    <section className="bg-gradient-to-br from-emerald-50 via-emerald-100/50 to-amber-50/30 py-16 relative overflow-hidden">
+                      <motion.div 
+                        className="absolute top-20 right-20 w-64 h-64 bg-amber-400/20 rounded-full blur-3xl"
+                        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+                        transition={{ duration: 8, repeat: Infinity }}
+                      />
+                      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, ease: smoothEasing }}
+                          className="text-center"
+                        >
+                          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full mb-6 shadow-lg">
+                            <Scale className="w-8 h-8 text-white" />
+                          </div>
+                          <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+                            Terms of <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-amber-600 bg-clip-text text-transparent">Service</span>
+                          </h1>
+                          <p className="text-muted-foreground">
+                            Effective Date: March 1, 2026
+                          </p>
+                        </motion.div>
+                      </div>
+                    </section>
+                    {/* Content */}
+                    <section className="py-12">
+                      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                        <div className="prose prose-slate max-w-none">
+                          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: smoothEasing }} className="mb-12">
+                            <pre className="whitespace-pre-wrap text-muted-foreground text-base">
+            {`
               {/* User Accounts */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -202,6 +197,15 @@ const Terms = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: smoothEasing }}
                 className="mb-12"
+                            </pre>
+                          </motion.div>
+                        </div>
+                      </div>
+                    </section>
+                  </main>
+                  <Footer />
+                </div>
+              );
               >
                 <h2 className="font-display text-2xl font-bold mb-4">PROHIBITED USE</h2>
                 <p className="text-muted-foreground mb-4">
