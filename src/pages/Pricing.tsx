@@ -23,7 +23,7 @@ const Pricing = () => {
       name: "Single Store",
       price: "1.25",
       period: "per transaction",
-      description: "Perfect for single dispensary locations",
+      description: "Perfect for single merchant locations",
       features: [
         "Up to $50K monthly volume",
         "Standard verification",
@@ -39,7 +39,7 @@ const Pricing = () => {
       name: "Multiple Stores in One State",
       price: "1.25",
       period: "per transaction",
-      description: "For dispensaries operating in one state",
+      description: "For merchants operating in one state",
       features: [
         "Up to $250K monthly volume",
         "Priority verification",
@@ -57,7 +57,7 @@ const Pricing = () => {
       name: "Multi State Operator",
       price: "1.25",
       period: "per transaction",
-      description: "For multi-state dispensary operations",
+      description: "For multi-state merchant operations",
       features: [
         "Unlimited monthly volume",
         "White-label platform",

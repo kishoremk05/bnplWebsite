@@ -9,7 +9,7 @@ const smoothEasing = [0.16, 1, 0.3, 1] as const;
 const categories = [
   { 
     id: "store-21", 
-    label: "Zen Leaf", 
+    label: "Zachary's Farmers Market", 
     icon: Store,
     image: "/images/image21.png",
     amount: "$200.00",
@@ -17,7 +17,7 @@ const categories = [
   },
   { 
     id: "store-22", 
-    label: "Curaleaf", 
+    label: "Charlotte Lanes", 
     icon: Store,
     image: "/images/image22.png",
     amount: "$180.00",
@@ -25,7 +25,7 @@ const categories = [
   },
   { 
     id: "store-23", 
-    label: "AYR Wellness", 
+    label: "Shayne's Appliances", 
     icon: Store,
     image: "/images/image23.png",
     amount: "$150.00",
@@ -33,7 +33,7 @@ const categories = [
   },
   { 
     id: "store-24", 
-    label: "Justice Grown", 
+    label: "Charlie's", 
     icon: Store,
     image: "/images/image24.png",
     amount: "$120.00",
