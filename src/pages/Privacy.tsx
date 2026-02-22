@@ -31,7 +31,7 @@ const Privacy = () => {
                 Privacy <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-amber-600 bg-clip-text text-transparent">Policy</span>
               </h1>
               <p className="text-muted-foreground">
-                Effective Date: [Insert Date]
+                Effective Date: March 1, 2026
               </p>
             </motion.div>
           </div>
