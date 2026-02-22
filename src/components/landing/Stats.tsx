@@ -8,7 +8,7 @@ const smoothEasing = [0.16, 1, 0.3, 1] as const;
 const stats = [
   { 
     value: "Real world tested", 
-    label: "Live tested inside a licensed New Jersey dispensary", 
+    label: "Live tested in a New Jersey merchant", 
     description: "Built for real customers, real transactions, real compliance",
     icon: Users,
     color: "from-emerald-500 to-emerald-700",

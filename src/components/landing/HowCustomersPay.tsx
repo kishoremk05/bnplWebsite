@@ -9,7 +9,7 @@ const smoothEasing = [0.16, 1, 0.3, 1] as const;
 const categories = [
   { 
     id: "store-21", 
-    label: "Store 21", 
+    label: "Zen Leaf", 
     icon: Store,
     image: "/images/image21.png",
     amount: "$200.00",
@@ -17,7 +17,7 @@ const categories = [
   },
   { 
     id: "store-22", 
-    label: "Store 22", 
+    label: "Curaleaf", 
     icon: Store,
     image: "/images/image22.png",
     amount: "$180.00",
@@ -25,7 +25,7 @@ const categories = [
   },
   { 
     id: "store-23", 
-    label: "Store 23", 
+    label: "AYR Wellness", 
     icon: Store,
     image: "/images/image23.png",
     amount: "$150.00",
@@ -33,7 +33,7 @@ const categories = [
   },
   { 
     id: "store-24", 
-    label: "Store 24", 
+    label: "Justice Grown", 
     icon: Store,
     image: "/images/image24.png",
     amount: "$120.00",
@@ -90,7 +90,7 @@ export function HowCustomersPay() {
             How customers are paying<br />with Veridian Credit Systems
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose your dispensary and see how easy it is to split payments
+            Choose your merchant and see how easy it is to split payments
           </p>
         </motion.div>
 

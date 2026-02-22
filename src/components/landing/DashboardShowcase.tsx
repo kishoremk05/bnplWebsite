@@ -250,7 +250,7 @@ export function DashboardShowcase() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.4, duration: 0.5, ease: smoothEasing }}
                 >
-                  Use Veridian Credit Systems at your favorite local dispensary. Split payments over time.
+                  Use Veridian Credit Systems at your favorite local merchant. Split payments over time.
                 </motion.p>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
