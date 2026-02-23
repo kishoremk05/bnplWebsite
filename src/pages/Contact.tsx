@@ -95,8 +95,9 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold mb-1">Office</h3>
                         <p className="text-muted-foreground">
-                          [Company Address]<br />
-                          [City, State ZIP]
+                          131 Continental Dr., Suite 305<br />
+                          Newark, DE 19713<br />
+                          USA
                         </p>
                       </div>
                     </div>

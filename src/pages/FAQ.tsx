@@ -14,7 +14,7 @@ const FAQ = () => {
     shoppers: [
       { q: "How does Veridian work?", a: "Veridian allows you to split your purchase into 4 equal, interest-free payments. Pay 25% at checkout, then the remaining 75% over 4 weeks." },
       { q: "Is there a credit check?", a: "We perform a soft credit check that won't affect your credit score. This helps us verify your eligibility without impacting your credit." },
-      { q: "What do I need to sign up?", a: "You'll need to be 21 years or older, have a valid ID, a US bank account and a debit or credit card." },
+      { q: "What do I need to sign up?", a: "You'll need to be 18 years or older, have a valid ID, a US bank account and a debit or credit card." },
       { q: "Are there any fees?", a: "No! Veridian is completely free for shoppers when you pay on time. There are no interest charges or hidden fees." },
       { q: "What happens if I miss a payment?", a: "We'll send you reminders before each payment is due. If you miss a payment, please contact us immediately to avoid any late fees." }
     ],

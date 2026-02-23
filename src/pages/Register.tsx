@@ -19,7 +19,7 @@ const customerBenefits = [
 ];
 
 const merchantBenefits = [
-  "Increase sales by 40%",
+  "Increase sales by 30%",
   "Zero risk for you",
   "Easy integration",
 ];
