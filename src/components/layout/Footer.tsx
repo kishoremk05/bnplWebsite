@@ -188,7 +188,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-center items-center gap-4">
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} Veridian Credit Systems, Inc. All rights reserved.
+            © {new Date().getFullYear()} Veridian Credit Systems, Inc.™ All rights reserved.
           </p>
         </div>
       </div>
