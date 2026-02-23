@@ -83,11 +83,11 @@ export function Navbar() {
           <Link to="/" className="flex items-center gap-3">
             <img 
               src="/VeridianCreditSystemsLogo.jpg" 
-              alt="Veridian Credit Systems" 
+              alt="Veridian Credit Systems, Inc." 
               className="h-10 w-10 rounded-xl object-cover"
             />
             <span className="font-bold text-xl text-slate-900 hidden sm:inline">
-              Veridian
+              Veridian Credit Systems, Inc.
             </span>
           </Link>
 

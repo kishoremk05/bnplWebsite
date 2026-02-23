@@ -69,11 +69,11 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-3 mb-6">
               <img 
                 src="/VeridianCreditSystemsLogo.jpg" 
-                alt="Veridian Credit Systems" 
+                alt="Veridian Credit Systems, Inc." 
                 className="h-12 w-12 rounded-xl object-cover"
               />
               <span className="font-bold text-xl text-white">
-                Veridian
+                Veridian Credit Systems, Inc.
               </span>
             </Link>
             <p className="text-slate-400 text-sm mb-6 max-w-xs">
@@ -181,14 +181,14 @@ export function Footer() {
         {/* Compliance Disclaimer */}
         <div className="mt-12 pt-8 border-t border-slate-800">
           <p className="text-xs text-slate-500 text-center max-w-4xl mx-auto leading-relaxed">
-            Veridian Credit Systems provides software that enables merchants to offer installment payment options using their own capital. Veridian does not extend credit, underwrite consumers or act as a lender.
+            Veridian Credit Systems, Inc. provides software that enables merchants to offer installment payment options using their own capital. Veridian Credit Systems, Inc. does not extend credit, underwrite consumers or act as a lender.
           </p>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-center items-center gap-4">
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} Veridian Credit Systems. All rights reserved.
+            © {new Date().getFullYear()} Veridian Credit Systems, Inc. All rights reserved.
           </p>
         </div>
       </div>
